@@ -26,7 +26,7 @@ I received my Ph.D. in Control Theory and Control Engineering from Institute of 
 - *2024.05*: Finished my Ph.D. final defense! What an unforgettable journey!
 - *2024.05*: One [paper](https://ieeexplore.ieee.org/abstract/document/10541306) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
 - *2024.01*: One [paper](https://ieeexplore.ieee.org/abstract/document/10610646) got accepted by ICRA 2024. 
-- *2023.01*: Started internship at NIO Autonomous Driving.
+- *2023.01*: Started internship at NIO Autonomous Driving division.
 - *2022.08*: One [paper](https://ieeexplore.ieee.org/abstract/document/9870872) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
 
 [comment]: <> (- *2024.01*: &nbsp;🎉🎉 One [paper](https://ieeexplore.ieee.org/abstract/document/10610646) got accepted by ICRA 2024.)
@@ -47,15 +47,17 @@ I received my Ph.D. in Control Theory and Control Engineering from Institute of 
 
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
-# 📖 Educations
-- *2021 - 2024*, Ph.D., Institute of Automation, Chinese Academy of Sciences, Beijing, China.
-- *2019 - 2021*, M.Sc., University of Pittsburgh, Pittsburgh, Pennsylvania, U.S.
-- *2017 - 2019*, M.Sc., The University of Texas at Dallas, Richardson, Texas, U.S.
-- *2013 - 2017*, B.Eng., East China University of Science and Technology, Shanghai, China.
+# 🎖 Honors and Awards
+- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
-# 💻 Experiences
-- *2023.01 - 2023.06*, Algorithm Engineer Intern, NIO Autonomous Driving.
-- *2020.10 - 2021.05*, Research Assistant, Institute of Automation, Chinese Academy of Sciences.
-- *2020.07 - 2020.10*, Research Assistant, Zhejiang University (Mentor: [Zenan Huang](https://lccurious.github.io/)).
-- *2019.01 - 2019.04*, Research Assistant, University of Pittsburgh (Mentor: [Michael Colaresi](https://michaelcolaresi.com/)).
-- *2018.07 - 2018.12*, Research Assistant, The University of Texas at Dallas (Mentor: [Haoliang Yu](https://scholar.google.com/citations?user=7suTuZsAAAAJ&hl=en)).
+# 📖 Educations
+- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+
+# 💬 Invited Talks
+- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+
+# 💻 Internships
+- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
