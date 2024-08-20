@@ -1,7 +1,6 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
 author_profile: true
 redirect_from: 
   - /about/
@@ -31,19 +30,57 @@ I received my Ph.D. in Control Theory and Control Engineering from Institute of 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications.
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+[Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations](https://ieeexplore.ieee.org/abstract/document/10577462)
 
-**Kaiming He**, Haonan Duan, Shaoqing Ren, Jian Sun
+Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, **Haonan Duan**
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+IEEE Transactions on Robotics, 2024
+
+[Project](https://v-wewei.github.io/sr_dexgrasp/) [Video](https://www.bilibili.com/video/BV1Pe411n7w6/?spm_id_from=888.80997.embed_other.whitelist&t=18.087712&bvid=BV1Pe411n7w6&vd_source=1f3c77957407e0c8a5f2cd9dd9baede0)
+ 
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2024.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand](https://ieeexplore.ieee.org/abstract/document/10541306)
+
+Yongkang Luo, Wanyi Li, Peng Wang, **Haonan Duan**, Wei Wei, Jia Sun
+
+IEEE Transactions on Cognitive and Developmental Systems, 2024
+ 
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICRA 2024</div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes](https://ieeexplore.ieee.org/abstract/document/10610646)
+
+**Haonan Duan**, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang
+
+IEEE International Conference on Robotics and Automation (ICRA), 2024
+ 
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand](https://ieeexplore.ieee.org/abstract/document/10610646)
+
+**Haonan Duan**, Peng Wang, Yiming Li, Daheng Li, Wei Wei
+
+IEEE Transactions on Cognitive and Developmental Systems, 2022
+ 
+</div>
+</div>
 
 # 📖 Educations
 - *2021 - 2024*, Ph.D., Institute of Automation, Chinese Academy of Sciences, Beijing, China.
@@ -52,6 +89,7 @@ I received my Ph.D. in Control Theory and Control Engineering from Institute of 
 - *2013 - 2017*, B.Eng., East China University of Science and Technology, Shanghai, China.
 
 # 💻 Experiences
+- *2024.07 - Now*, Senior Researcher, SenseTime Research.
 - *2023.01 - 2023.06*, Algorithm Engineer Intern, NIO Autonomous Driving.
 - *2020.10 - 2021.05*, Research Assistant, Institute of Automation, Chinese Academy of Sciences.
 - *2020.07 - 2020.10*, Research Assistant, Zhejiang University (Mentor: [Zenan Huang](https://lccurious.github.io/)).
