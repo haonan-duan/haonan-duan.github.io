@@ -42,8 +42,6 @@ Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand
 **Haonan Duan**, Peng Wang, Yifan Yang, Daheng Li, Wei Wei, Yongkang Luo, Guoqiang Deng
 
 IEEE Transactions on Robotics, 2024
-
-[Project](https://v-wewei.github.io/sr_dexgrasp/) [Video](https://www.bilibili.com/video/BV1Pe411n7w6/?spm_id_from=888.80997.embed_other.whitelist&t=18.087712&bvid=BV1Pe411n7w6&vd_source=1f3c77957407e0c8a5f2cd9dd9baede0)
  
 </div>
 </div>
