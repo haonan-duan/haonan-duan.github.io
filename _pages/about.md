@@ -21,6 +21,8 @@ I am a senior researcher at SenseTime Research, under the guidance of [Jifeng Da
 I received my Ph.D. in Control Theory and Control Engineering from Institute of Automation, Chinese Academy of Sciences in 2024, where I was advised by Prof. [Peng Wang](https://people.ucas.edu.cn/~wangpengcasia). My research primarily focused on robot dexterous grasping and human-robot interaction. I had the privilege of collaborating closely with [Yiming Li](https://yimingli1998.github.io/) and [Wei Wei](https://scholar.google.com/citations?user=7jZcTtUAAAAJ&hl=en&oi=sra) on various projects in these areas.
 
 # 🔥 News
+- *2024.11*: One paper got accepted by IEEE Transactions on Robotics (T-RO).
+- *2024.11*: One paper got accepted by IEEE Robotics and Automation Letters (RA-L). 
 - *2024.06*: One [paper](https://ieeexplore.ieee.org/abstract/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
 - *2024.05*: Finished my Ph.D. final defense! What an unforgettable journey!
 - *2024.05*: One [paper](https://ieeexplore.ieee.org/abstract/document/10541306) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
@@ -31,6 +33,20 @@ I received my Ph.D. in Control Theory and Control Engineering from Institute of 
 # 📝 Publications 
 
 Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications.
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand
+
+**Haonan Duan**, Peng Wang, Yifan Yang, Daheng Li, Wei Wei, Yongkang Luo, Guoqiang Deng
+
+IEEE Transactions on Robotics, 2024
+
+[Project](https://v-wewei.github.io/sr_dexgrasp/) [Video](https://www.bilibili.com/video/BV1Pe411n7w6/?spm_id_from=888.80997.embed_other.whitelist&t=18.087712&bvid=BV1Pe411n7w6&vd_source=1f3c77957407e0c8a5f2cd9dd9baede0)
+ 
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
