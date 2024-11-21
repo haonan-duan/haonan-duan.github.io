@@ -16,9 +16,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior researcher at SenseTime Research, under the guidance of [Jifeng Dai](https://jifengdai.org/) and [Lewei Lu](https://scholar.google.com.tw/citations?user=zdgKJXIAAAAJ&hl=zh-CN), specializing in Multimodal Large Language Models, Embodied AI, and Robot Learning. I collaborate closely with [Xizhou Zhu](https://scholar.google.com/citations?user=02RXI00AAAAJ&hl=en) and [Hao Tian](https://scholar.google.com/citations?hl=en&user=GNfC6yYAAAAJ&view_op=list_works&sortby=pubdate). My research interests include designing foundational models for robotics perception and manipulation. 
+I am a senior researcher at SenseTime Research, under the guidance of [Jifeng Dai](https://jifengdai.org/). My primary research interests lie in Multimodal Large Language Models, Embodied AI, and Robot Learning, with a specific focus on designing foundational models for robotic perception and manipulation. 
 
-I received my Ph.D. in Control Theory and Control Engineering from Institute of Automation, Chinese Academy of Sciences in 2024, where I was advised by Prof. [Peng Wang](https://people.ucas.edu.cn/~wangpengcasia). My research primarily focused on robot dexterous grasping and human-robot interaction. I had the privilege of collaborating closely with [Yiming Li](https://yimingli1998.github.io/) and [Wei Wei](https://scholar.google.com/citations?user=7jZcTtUAAAAJ&hl=en&oi=sra) on various projects in these areas.
+I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024, where I was advised by Prof. [Peng Wang](https://people.ucas.edu.cn/~wangpengcasia). My research primarily focused on robot dexterous grasping and human-robot interaction.
 
 # 🔥 News
 - *2024.11*: One paper got accepted by IEEE Transactions on Robotics (T-RO).
@@ -37,7 +37,7 @@ Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand
+**Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**
 
 **Haonan Duan**, Peng Wang, Yifan Yang, Daheng Li, Wei Wei, Yongkang Luo, Guoqiang Deng
 
@@ -63,7 +63,7 @@ IEEE Transactions on Robotics, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand](https://ieeexplore.ieee.org/abstract/document/10541306)
+[**Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand**](https://ieeexplore.ieee.org/abstract/document/10541306)
 
 Yongkang Luo, Wanyi Li, Peng Wang, **Haonan Duan**, Wei Wei, Jia Sun
 
@@ -75,7 +75,7 @@ IEEE Transactions on Cognitive and Developmental Systems, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICRA 2024</div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes](https://ieeexplore.ieee.org/abstract/document/10610646)
+[**Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes**](https://ieeexplore.ieee.org/abstract/document/10610646)
 
 **Haonan Duan**, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang
 
@@ -87,7 +87,7 @@ IEEE International Conference on Robotics and Automation (ICRA), 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand](https://ieeexplore.ieee.org/abstract/document/10610646)
+[**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/abstract/document/10610646)
 
 **Haonan Duan**, Peng Wang, Yiming Li, Daheng Li, Wei Wei
 
@@ -106,6 +106,6 @@ IEEE Transactions on Cognitive and Developmental Systems, 2022
 - *2024.07 - Now*, Senior Researcher, SenseTime Research.
 - *2023.01 - 2023.06*, Algorithm Engineer Intern, NIO Autonomous Driving.
 - *2020.10 - 2021.05*, Research Assistant, Institute of Automation, Chinese Academy of Sciences.
-- *2020.07 - 2020.10*, Research Assistant, Zhejiang University (Mentor: [Zenan Huang](https://lccurious.github.io/)).
-- *2019.01 - 2019.04*, Research Assistant, University of Pittsburgh (Mentor: [Michael Colaresi](https://michaelcolaresi.com/)).
-- *2018.07 - 2018.12*, Research Assistant, The University of Texas at Dallas (Mentor: [Haoliang Yu](https://scholar.google.com/citations?user=7suTuZsAAAAJ&hl=en)).
+- *2020.07 - 2020.10*, Research Assistant, Zhejiang University.
+- *2019.01 - 2019.04*, Research Assistant, University of Pittsburgh.
+- *2018.07 - 2018.12*, Research Assistant, The University of Texas at Dallas.
