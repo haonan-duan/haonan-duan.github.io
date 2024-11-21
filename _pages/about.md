@@ -22,13 +22,13 @@ I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in
 
 # 🔥 News
 - *2024.11*: One paper got accepted by IEEE Transactions on Robotics (T-RO).
-- *2024.11*: One paper got accepted by IEEE Robotics and Automation Letters (RA-L). 
-- *2024.06*: One [paper](https://ieeexplore.ieee.org/abstract/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
+- *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10758247) got accepted by IEEE Robotics and Automation Letters (RA-L). 
+- *2024.06*: One [paper](https://ieeexplore.ieee.org/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
 - *2024.05*: Finished my Ph.D. final defense! What an unforgettable journey!
-- *2024.05*: One [paper](https://ieeexplore.ieee.org/abstract/document/10541306) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
-- *2024.01*: One [paper](https://ieeexplore.ieee.org/abstract/document/10610646) got accepted by ICRA 2024. 
+- *2024.05*: One [paper](https://ieeexplore.ieee.org/document/10541306) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
+- *2024.01*: One [paper](https://ieeexplore.ieee.org/document/10610646) got accepted by ICRA 2024. 
 - *2023.01*: Started internship at NIO Autonomous Driving.
-- *2022.08*: One [paper](https://ieeexplore.ieee.org/abstract/document/9870872) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
+- *2022.08*: One [paper](https://ieeexplore.ieee.org/document/9870872) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
 
 # 📝 Publications 
 
@@ -49,7 +49,7 @@ IEEE Transactions on Robotics, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations**](https://ieeexplore.ieee.org/abstract/document/10577462)
+[**Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations**](https://ieeexplore.ieee.org/document/10577462)
 
 Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, **Haonan Duan**
 
@@ -63,7 +63,7 @@ IEEE Transactions on Robotics, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand**](https://ieeexplore.ieee.org/abstract/document/10541306)
+[**Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10541306)
 
 Yongkang Luo, Wanyi Li, Peng Wang, **Haonan Duan**, Wei Wei, Jia Sun
 
@@ -75,7 +75,7 @@ IEEE Transactions on Cognitive and Developmental Systems, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICRA 2024</div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes**](https://ieeexplore.ieee.org/abstract/document/10610646)
+[**Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes**](https://ieeexplore.ieee.org/document/10610646)
 
 **Haonan Duan**, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang
 
@@ -87,7 +87,7 @@ IEEE International Conference on Robotics and Automation (ICRA), 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/abstract/document/10610646)
+[**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10610646)
 
 **Haonan Duan**, Peng Wang, Yiming Li, Daheng Li, Wei Wei
 
