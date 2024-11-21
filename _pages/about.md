@@ -49,7 +49,7 @@ IEEE Transactions on Robotics, 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations](https://ieeexplore.ieee.org/abstract/document/10577462)
+[**Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations**](https://ieeexplore.ieee.org/abstract/document/10577462)
 
 Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, **Haonan Duan**
 
