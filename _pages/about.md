@@ -21,7 +21,7 @@ I am a senior researcher at SenseTime Research, under the guidance of [Jifeng Da
 I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024, where I was advised by Prof. [Peng Wang](https://people.ucas.edu.cn/~wangpengcasia). My research primarily focused on robot dexterous grasping and human-robot interaction.
 
 # 🔥 News
-- *2024.11*: One paper got accepted by IEEE Transactions on Robotics (T-RO).
+- *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10770603) got accepted by IEEE Transactions on Robotics (T-RO).
 - *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10758247) got accepted by IEEE Robotics and Automation Letters (RA-L). 
 - *2024.06*: One [paper](https://ieeexplore.ieee.org/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
 - *2024.05*: Finished my Ph.D. final defense! What an unforgettable journey!
@@ -37,7 +37,7 @@ Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**
+[**Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10770603)
 
 **Haonan Duan**, Peng Wang, Yifan Yang, Daheng Li, Wei Wei, Yongkang Luo, Guoqiang Deng
 
