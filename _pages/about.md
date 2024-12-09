@@ -60,7 +60,7 @@ IEEE Transactions on Robotics, 2024
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2024.png' alt="sym" width="100%"></div></div>
+<!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Progressive Transfer Learning for Dexterous In-Hand Manipulation with Multi-Fingered Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10541306)
@@ -70,7 +70,7 @@ Yongkang Luo, Wanyi Li, Peng Wang, **Haonan Duan**, Wei Wei, Jia Sun
 IEEE Transactions on Cognitive and Developmental Systems, 2024
  
 </div>
-</div>
+</div> -->
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICRA 2024</div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -105,7 +105,3 @@ IEEE Transactions on Cognitive and Developmental Systems, 2022
 # 💻 Experiences
 - *2024.07 - Now*, Senior Researcher, SenseTime Research.
 - *2023.01 - 2023.06*, Algorithm Engineer Intern, NIO Autonomous Driving.
-- *2020.10 - 2021.05*, Research Assistant, Institute of Automation, Chinese Academy of Sciences.
-- *2020.07 - 2020.10*, Research Assistant, Zhejiang University.
-- *2019.01 - 2019.04*, Research Assistant, University of Pittsburgh.
-- *2018.07 - 2018.12*, Research Assistant, The University of Texas at Dallas.
