@@ -87,7 +87,7 @@ IEEE International Conference on Robotics and Automation (ICRA), 2024
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10610646)
+[**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/9870872)
 
 **Haonan Duan**, Peng Wang, Yiming Li, Daheng Li, Wei Wei
 
@@ -99,8 +99,6 @@ IEEE Transactions on Cognitive and Developmental Systems, 2022
 # 📖 Educations
 - *2021 - 2024*, Ph.D., Institute of Automation, Chinese Academy of Sciences, Beijing, China.
 - *2019 - 2021*, M.Sc., University of Pittsburgh, Pittsburgh, Pennsylvania, U.S.
-- *2017 - 2019*, M.Sc., The University of Texas at Dallas, Richardson, Texas, U.S.
-- *2013 - 2017*, B.Eng., East China University of Science and Technology, Shanghai, China.
 
 # 💻 Experiences
 - *2024.07 - Now*, Senior Researcher, SenseTime Research.
