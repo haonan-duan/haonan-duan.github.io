@@ -18,7 +18,7 @@ redirect_from:
 
 I am a senior researcher at SenseTime Research, under the guidance of [Jifeng Dai](https://jifengdai.org/). My primary research interests lie in Multimodal Large Language Models, Embodied AI, and Robot Learning, with a specific focus on designing foundational models for robotic perception and manipulation. 
 
-I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024, where I was advised by Prof. [Peng Wang](https://people.ucas.edu.cn/~wangpengcasia). My research primarily focused on robot dexterous grasping and human-robot interaction.
+I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024. My research primarily focused on robot dexterous grasping and human-robot interaction.
 
 # 🔥 News
 - *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10770603) got accepted by IEEE Transactions on Robotics (T-RO).
