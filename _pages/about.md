@@ -34,6 +34,20 @@ I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in
 
 Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications.
 
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/Dita.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy**](https://arxiv.org/abs/2503.19757)
+
+Zhi Hou, Tianyi Zhang, Yuwen Xiong, **Haonan Duan**, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen
+
+arXiv, 2025
+
+[Project](https://robodita.github.io/) / [Paper](https://arxiv.org/abs/2503.19757) / [Bilibili](https://www.bilibili.com/video/BV1j5QBYzEkR) / [YouTube](https://www.youtube.com/watch?v=pBLcmeg0mdY)
+ 
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -55,7 +69,7 @@ Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, *
 
 IEEE Transactions on Robotics, 2024
 
-[Project](https://v-wewei.github.io/sr_dexgrasp/) [Video](https://www.bilibili.com/video/BV1Pe411n7w6/?spm_id_from=888.80997.embed_other.whitelist&t=18.087712&bvid=BV1Pe411n7w6&vd_source=1f3c77957407e0c8a5f2cd9dd9baede0)
+[Project](https://v-wewei.github.io/sr_dexgrasp/) / [Video](https://www.bilibili.com/video/BV1Pe411n7w6/?spm_id_from=888.80997.embed_other.whitelist&t=18.087712&bvid=BV1Pe411n7w6&vd_source=1f3c77957407e0c8a5f2cd9dd9baede0)
  
 </div>
 </div>
