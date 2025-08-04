@@ -21,14 +21,12 @@ I am a senior researcher at SenseTime Research. My primary research interests li
 I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024. My research primarily focused on robot dexterous grasping and human-robot interaction.
 
 # 🔥 News
-- *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10770603) got accepted by IEEE Transactions on Robotics (T-RO).
-- *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10758247) got accepted by IEEE Robotics and Automation Letters (RA-L). 
+- *2025.06*: One [paper](https://arxiv.org/abs/2503.19757) got accepted by ICCV 2025.
+- *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10770603) got accepted by IEEE Transactions on Robotics (T-RO). 
 - *2024.06*: One [paper](https://ieeexplore.ieee.org/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
 - *2024.05*: Finished my Ph.D. final defense! What an unforgettable journey!
-- *2024.05*: One [paper](https://ieeexplore.ieee.org/document/10541306) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
 - *2024.01*: One [paper](https://ieeexplore.ieee.org/document/10610646) got accepted by ICRA 2024. 
 - *2023.01*: Started internship at NIO Autonomous Driving.
-- *2022.08*: One [paper](https://ieeexplore.ieee.org/document/9870872) got accepted by IEEE Transactions on Cognitive and Developmental Systems (T-CDS).
 
 # 📝 Publications 
 
