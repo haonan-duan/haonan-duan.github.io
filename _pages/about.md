@@ -51,7 +51,7 @@ arXiv, 2025
 
 Zhi Hou<sup>*</sup>, Tianyi Zhang<sup>*</sup>, Yuwen Xiong, **Haonan Duan**, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen
 
-arXiv, 2025
+ICCV, 2025
 
 [Project](https://robodita.github.io/) / [Paper](https://arxiv.org/abs/2503.19757) / [Bilibili](https://www.bilibili.com/video/BV1j5QBYzEkR) / [YouTube](https://www.youtube.com/watch?v=pBLcmeg0mdY) / [知乎](https://zhuanlan.zhihu.com/p/31684414907)
  
