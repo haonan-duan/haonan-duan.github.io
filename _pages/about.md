@@ -37,9 +37,9 @@ Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4
 
 [**Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy**](https://arxiv.org/abs/2508.13103v1)
 
-Tianyi Zhang, Haonan Duan, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou
+Tianyi Zhang<sup>*</sup>, **Haonan Duan**<sup>*</sup>, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou
 
-axXiv, 2025
+arXiv, 2025
 
 </div>
 </div>
@@ -49,7 +49,7 @@ axXiv, 2025
 
 [**Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy**](https://arxiv.org/abs/2503.19757)
 
-Zhi Hou, Tianyi Zhang, Yuwen Xiong, **Haonan Duan**, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen
+Zhi Hou<sup>*</sup>, Tianyi Zhang<sup>*</sup>, Yuwen Xiong, **Haonan Duan**, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen
 
 arXiv, 2025
 
