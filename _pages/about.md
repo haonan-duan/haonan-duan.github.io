@@ -32,6 +32,18 @@ I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in
 
 Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications.
 
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/OC-VLA.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy**](https://arxiv.org/abs/2508.13103v1)
+
+Tianyi Zhang, Haonan Duan, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou
+
+axXiv, 2025
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/Dita.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -41,12 +53,12 @@ Zhi Hou, Tianyi Zhang, Yuwen Xiong, **Haonan Duan**, Hengjun Pu, Ronglei Tong, C
 
 arXiv, 2025
 
-[Project](https://robodita.github.io/) / [Paper](https://arxiv.org/abs/2503.19757) / [Bilibili](https://www.bilibili.com/video/BV1j5QBYzEkR) / [YouTube](https://www.youtube.com/watch?v=pBLcmeg0mdY)
+[Project](https://robodita.github.io/) / [Paper](https://arxiv.org/abs/2503.19757) / [Bilibili](https://www.bilibili.com/video/BV1j5QBYzEkR) / [YouTube](https://www.youtube.com/watch?v=pBLcmeg0mdY) / [知乎](https://zhuanlan.zhihu.com/p/31684414907)
  
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/TRO-D.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Reactive Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/10770603)
@@ -58,7 +70,7 @@ IEEE Transactions on Robotics, 2024
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-RO</div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/TRO-W.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations**](https://ieeexplore.ieee.org/document/10577462)
@@ -84,7 +96,7 @@ IEEE Transactions on Cognitive and Developmental Systems, 2024
 </div>
 </div> -->
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICRA 2024</div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/ICRA2024.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes**](https://ieeexplore.ieee.org/document/10610646)
@@ -96,7 +108,7 @@ IEEE International Conference on Robotics and Automation (ICRA), 2024
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-CDS</div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/TCDS2022.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand**](https://ieeexplore.ieee.org/document/9870872)
