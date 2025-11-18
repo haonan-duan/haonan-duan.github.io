@@ -21,6 +21,7 @@ I am a senior researcher at SenseTime Research. My primary research interests li
 I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024. My research primarily focused on robot dexterous grasping and human-robot interaction.
 
 # 🔥 News
+- *2025.11*: One [paper](https://arxiv.org/abs/2508.13103v1) got accepted by AAAI 2026.
 - *2025.06*: One [paper](https://arxiv.org/abs/2503.19757) got accepted by ICCV 2025.
 - *2024.11*: One [paper](https://ieeexplore.ieee.org/document/10770603) got accepted by IEEE Transactions on Robotics (T-RO). 
 - *2024.06*: One [paper](https://ieeexplore.ieee.org/document/10577462) got accepted by IEEE Transactions on Robotics (T-RO).
@@ -39,7 +40,7 @@ Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4
 
 Tianyi Zhang<sup>*</sup>, **Haonan Duan**<sup>*</sup>, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou
 
-arXiv, 2025
+AAAI, 2026
 
 </div>
 </div>
