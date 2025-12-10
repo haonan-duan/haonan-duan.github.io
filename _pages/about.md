@@ -104,7 +104,7 @@ IEEE Transactions on Cognitive and Developmental Systems, 2024
 
 **Haonan Duan**, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang
 
-IEEE International Conference on Robotics and Automation (ICRA), 2024
+ICRA, 2024
  
 </div>
 </div>
