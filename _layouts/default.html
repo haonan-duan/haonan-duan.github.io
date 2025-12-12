@@ -16,7 +16,7 @@ layout: compress
 
     <div id="main" role="main">
       {% include sidebar.html %}
-    
+
       <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
         {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
         <div class="page__inner-wrap">
@@ -29,7 +29,15 @@ layout: compress
 
     {% include scripts.html %}
 
+    <footer class="site-footer">
+      <div class="visitor-map-container">
+        <script
+          type="text/javascript"
+          id="mmvst_globe"
+          src="//mapmyvisitors.com/globe.js?d=MxjD1mXhIptp4pC9A7Mn28AnPvMG_K6jVvvMj41M-lQ"
+        ></script>
+      </div>
+    </footer>
+
   </body>
 </html>
-
-<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=MxjD1mXhIptp4pC9A7Mn28AnPvMG_K6jVvvMj41M-lQ"></script>
