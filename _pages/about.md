@@ -16,9 +16,11 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a senior researcher at SenseTime Research. My primary research interests lie in Multimodal Large Language Models, Embodied AI, and Robot Learning, with a specific focus on designing foundational models for robotic perception and manipulation. 
+I am a researcher at [NVIDIA GEAR](https://research.nvidia.com/labs/gear/), working under the guidence of Dr. [Jim Fan](https://jimfan.me/) and Prof. [Yuke Zhu](https://yukezhu.me/). My research sits at the intersection of Multimodal Large Language Models and Robot Learning, with a specific focus on building foundation models for robotic perception and manipulation.
 
-I received my Ph.D. from Institute of Automation, Chinese Academy of Sciences in 2024. My research primarily focused on robot dexterous grasping and human-robot interaction.
+Previously, I was a researcher at SenseTime, where I worked on Vision-Language-Action models across pre-training, post-training, and their applications in multi-view generalization and human-robot interaction. I also contributed to video understanding, particularly agent-based reinforcement learning for long-horizon video reasoning.
+
+I received my Ph.D. from the Institute of Automation, Chinese Academy of Sciences in 2024. My doctoral research focused on robotic dexterous grasping and human–robot interaction.
 
 # 🔥 News
 - *2025.11*: One [paper](https://arxiv.org/abs/2508.13103v1) got accepted by AAAI 2026.
@@ -126,5 +128,6 @@ IEEE Transactions on Cognitive and Developmental Systems, 2022
 - *2019 - 2021*, M.Sc., University of Pittsburgh, Pittsburgh, Pennsylvania, U.S.
 
 # 💻 Experiences
-- *2024.07 - Now*, Senior Researcher, SenseTime Research.
+- *2026.01 - Now*, Researcher, NVIDIA GEAR.
+- *2024.07 - 2025.09*, Senior Researcher, SenseTime Research.
 - *2023.01 - 2023.06*, Algorithm Engineer Intern, NIO Autonomous Driving.
