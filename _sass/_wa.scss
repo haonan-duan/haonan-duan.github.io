@@ -1,0 +1,437 @@
+/* 和モダン — wa-modern layer
+   Overrides theme defaults with a restrained Japanese-inspired palette.
+   Imported last from assets/css/main.scss so its rules cascade over the theme. */
+
+$kinari:        #f7f4ec;  // 生成り — unbleached page background
+$washi:         #fbfaf5;  // washi paper — card surface
+$sumi:          #1f1d1a;  // 墨 — primary ink
+$sumi-2:        #6b655c;  // secondary text
+$hairline:      #d9d3c5;  // default rule / border
+$hairline-dark: #8b8376;  // hover border
+$ai:            #2d4a6b;  // 藍 — indigo accent for links
+
+html, body {
+  background: $kinari;
+}
+
+body {
+  color: $sumi;
+}
+
+/* narrower reading column, more breathing room */
+.page__content {
+  line-height: 1.78;
+  color: $sumi;
+  font-size: 1rem;
+
+  p { color: $sumi; }
+  strong { color: $sumi; font-weight: 600; }
+}
+
+/* links: deeper indigo with always-on subtle underline */
+.page__content a {
+  color: $ai;
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 74, 107, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+
+  &:hover,
+  &:focus {
+    color: darken($ai, 8%);
+    text-decoration-color: $ai;
+  }
+}
+
+/* section headings — lowercase with hairline rule beneath */
+.page__content h1 {
+  font-size: 1.15em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: $sumi;
+  margin: 3em 0 1.4em 0;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid $hairline;
+
+  /* first heading needs less top margin */
+  &:first-of-type { margin-top: 2em; }
+}
+
+/* preserve scroll-offset anchor behavior (used by .anchor spans) */
+$scroll_offset: 2em;
+.anchor:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 0;
+  height: $scroll_offset;
+  margin-top: -$scroll_offset;
+}
+
+/* ——— paper cards ——— */
+.paper-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background: $washi;
+  border: 1px solid $hairline;
+  border-radius: 2px;
+  padding: 1.6em;
+  margin: 0 0 1em 0;
+  transition: border-color 220ms ease, background 220ms ease;
+
+  &:hover {
+    border-color: $hairline-dark;
+  }
+
+  .paper-box-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    order: 2;
+    margin-top: 1em;
+
+    img {
+      max-width: 100%;
+      box-shadow: none;
+      border: 1px solid $hairline;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+  }
+
+  .paper-box-text {
+    width: 100%;
+    order: 1;
+
+    p { margin: 0 0 0.35em 0; }
+
+    .paper-box-title {
+      line-height: 1.45;
+      margin-bottom: 0.5em;
+      a {
+        color: $sumi;
+        border-bottom: none;
+        strong { font-weight: 600; }
+      }
+      a:hover { border-bottom-color: $sumi; color: $sumi; }
+    }
+
+    .paper-box-authors {
+      color: $sumi-2;
+      font-size: 0.92em;
+      line-height: 1.6;
+    }
+
+    .paper-box-venue {
+      color: $sumi-2;
+      font-size: 0.88em;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4em;
+    }
+
+    .paper-box-links {
+      font-size: 0.88em;
+      color: $sumi-2;
+      margin-top: 0.4em;
+      a { color: $ai; }
+    }
+  }
+
+  @include breakpoint($medium) {
+    .paper-box-image {
+      justify-content: flex-start;
+      width: 38%;
+      min-width: 200px;
+      order: 1;
+      margin-top: 0;
+      img { max-width: 100%; }
+    }
+
+    .paper-box-text {
+      width: 62%;
+      padding-left: 1.6em;
+      order: 2;
+    }
+  }
+}
+
+/* ——— timeline for news / education / experience ———
+   Styles the <ul> that kramdown emits from `- *date*, text` markdown. */
+.page__content ul {
+  list-style: none;
+  padding-left: 1.4em;
+  margin-left: 0.2em;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.3em;
+    top: 0.55em;
+    bottom: 0.55em;
+    width: 1px;
+    background: $hairline;
+  }
+
+  li {
+    position: relative;
+    padding-left: 0.6em;
+    margin: 0 0 0.5em 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1.15em;
+      top: 0.72em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $washi;
+      border: 1px solid $hairline-dark;
+    }
+
+    /* first-level bullets only get the timeline treatment */
+    ul { display: none; } /* safety: no nested lists expected */
+
+    em {
+      display: inline-block;
+      min-width: 5.4em;
+      margin-right: 0.4em;
+      color: $sumi-2;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.86em;
+      font-style: normal;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+/* visitor map — warmer surface, matches palette */
+.visitor-map-container {
+  max-width: 320px;
+  margin: 3rem auto 2rem auto;
+  padding: 0.75rem;
+  background: $washi;
+  border: 1px solid $hairline;
+  border-radius: 2px;
+  box-shadow: none;
+
+  iframe, canvas, img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+}
+
+/* sidebar / author profile — soften to match */
+.sidebar, .author__avatar img {
+  border-color: $hairline !important;
+}
+.author__avatar img {
+  box-shadow: none !important;
+}
+.author__content, .author__urls-wrapper {
+  color: $sumi;
+}
+.author__urls a {
+  color: $sumi-2;
+  &:hover { color: $ai; }
+}
+
+/* masthead — quiet it down (needs !important to override theme) */
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav {
+  background: $kinari !important;
+  border-bottom-color: $hairline !important;
+}
+.masthead {
+  border-bottom: 1px solid $hairline;
+}
+.greedy-nav a {
+  color: $sumi !important;
+  text-decoration: none !important;
+  &:hover { color: $ai !important; }
+}
+.greedy-nav .visible-links a:before {
+  background: $ai !important;
+}
+
+/* footer — quiet */
+.site-footer {
+  background: $kinari;
+  padding-bottom: 2rem;
+}
+
+.site-footer__credit {
+  text-align: center;
+  color: $sumi-2;
+  font-size: 0.78em;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  margin: 1rem auto 0 auto;
+  padding-top: 1rem;
+  border-top: 1px solid $hairline;
+  max-width: 320px;
+
+  a {
+    color: $sumi-2;
+    text-decoration: underline;
+    text-decoration-color: $hairline;
+    text-underline-offset: 3px;
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+    &:hover { color: $ai; text-decoration-color: $ai; }
+  }
+}
+
+/* separator glyph inside paper-box links — muted so links stand out */
+.paper-box-sep {
+  color: $sumi-2;
+  opacity: 0.6;
+  margin: 0 0.1em;
+}
+
+/* ——— command palette (⌘K / Ctrl-K / `/`) ——— */
+.wa-palette {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 29, 26, 0.32);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 9999;
+  padding-top: 14vh;
+  backdrop-filter: blur(2px);
+
+  &.is-open { display: flex; }
+
+  &__box {
+    width: min(520px, 92vw);
+    background: $washi;
+    border: 1px solid $hairline;
+    border-radius: 3px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    padding: 0.35em;
+    font-family: inherit;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.8em 0.9em;
+    border: none;
+    border-bottom: 1px solid $hairline;
+    background: transparent;
+    font-size: 1em;
+    color: $sumi;
+    letter-spacing: 0.02em;
+    outline: none;
+    font-family: inherit;
+
+    &::placeholder {
+      color: $sumi-2;
+      font-style: italic;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3em 0;
+    max-height: 50vh;
+    overflow-y: auto;
+
+    &::before { display: none; } /* disable timeline rule from general ul styles */
+  }
+
+  &__item {
+    padding: 0.55em 0.9em;
+    cursor: pointer;
+    color: $sumi;
+    font-size: 0.95em;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+    border-radius: 2px;
+    margin: 0 0.3em;
+
+    &::before { display: none; } /* disable timeline dot */
+
+    &.is-active,
+    &:hover {
+      background: $kinari;
+      color: $ai;
+    }
+  }
+
+  &__hint {
+    padding: 0.5em 0.9em;
+    font-size: 0.78em;
+    color: $sumi-2;
+    border-top: 1px solid $hairline;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* toast (copied feedback) */
+.wa-toast {
+  position: fixed;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: $sumi;
+  color: $kinari;
+  padding: 0.55em 1.1em;
+  border-radius: 2px;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+  z-index: 10000;
+  pointer-events: none;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ——— scroll gear (NVIDIA GEAR nod) ——— */
+.wa-gear {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: $sumi-2;
+  opacity: 0;
+  transition: opacity 260ms ease, color 200ms ease;
+  pointer-events: none;
+  z-index: 100;
+  line-height: 0;
+
+  &.is-visible {
+    opacity: 0.55;
+    pointer-events: auto;
+  }
+
+  &:hover { color: $ai; opacity: 0.9; border-bottom: none; }
+
+  svg {
+    transition: transform 120ms linear;
+    transform-origin: 50% 50%;
+  }
+}
+
+/* ——— bio typewriter caret ——— */
+.wa-caret {
+  display: inline-block;
+  color: $sumi-2;
+  animation: wa-blink 900ms steps(2, end) infinite;
+}
+@keyframes wa-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+

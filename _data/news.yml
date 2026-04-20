@@ -1,0 +1,25 @@
+# News entries render newest-first in order listed here.
+# Fields:
+#   date      — short label, e.g., "2025.11"
+#   body_html — the sentence as raw HTML (one <a> tag is fine)
+
+- date: "2025.11"
+  body_html: 'One <a href="https://arxiv.org/abs/2508.13103v1">paper</a> got accepted by AAAI 2026.'
+
+- date: "2025.06"
+  body_html: 'One <a href="https://arxiv.org/abs/2503.19757">paper</a> got accepted by ICCV 2025.'
+
+- date: "2024.11"
+  body_html: 'One <a href="https://ieeexplore.ieee.org/document/10770603">paper</a> got accepted by IEEE Transactions on Robotics (T-RO).'
+
+- date: "2024.06"
+  body_html: 'One <a href="https://ieeexplore.ieee.org/document/10577462">paper</a> got accepted by IEEE Transactions on Robotics (T-RO).'
+
+- date: "2024.05"
+  body_html: 'Finished my Ph.D. final defense! What an unforgettable journey!'
+
+- date: "2024.01"
+  body_html: 'One <a href="https://ieeexplore.ieee.org/document/10610646">paper</a> got accepted by ICRA 2024.'
+
+- date: "2023.01"
+  body_html: 'Started internship at NIO Autonomous Driving.'

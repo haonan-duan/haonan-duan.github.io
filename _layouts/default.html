@@ -9,7 +9,7 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body data-author-email="{{ site.author.email }}">
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
@@ -37,6 +37,7 @@ layout: compress
           src="//mapmyvisitors.com/map.js?d=upJnlvBxL_DbF1_UmkSfWESTQDAz20HwXsw1_7bCliI&cl=ffffff&w=a"
         ></script>
       </div>
+      <p class="site-footer__credit">this website is built by <a href="https://claude.com/claude-code">claude code</a></p>
     </footer>
 
   </body>

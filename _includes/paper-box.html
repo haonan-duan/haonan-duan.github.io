@@ -1,0 +1,21 @@
+{%- comment -%}
+Renders one publication card from a _data/publications.yml entry.
+Usage: {% include paper-box.html pub=pub %}
+{%- endcomment -%}
+<div class="paper-box">
+  <div class="paper-box-image"><div><img src="{{ '/images/' | append: include.pub.image | relative_url }}" alt="{{ include.pub.title | escape }}" width="100%"></div></div>
+  <div class="paper-box-text">
+    <p class="paper-box-title"><a href="{{ include.pub.url }}"><strong>{{ include.pub.title }}</strong></a></p>
+    <p class="paper-box-authors">{{ include.pub.authors_html }}</p>
+    <p class="paper-box-venue">{{ include.pub.venue }}</p>
+    <p class="paper-box-links">
+      {%- if include.pub.links and include.pub.links.size > 0 -%}
+        {%- for link in include.pub.links -%}
+          <a href="{{ link.url }}">{{ link.text }}</a>{%- unless forloop.last %} <span class="paper-box-sep">/</span> {% endunless -%}
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ include.pub.url }}">Paper ↗</a>
+      {%- endif -%}
+    </p>
+  </div>
+</div>
