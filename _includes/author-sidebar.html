@@ -1,0 +1,50 @@
+{%- comment -%}
+Minimal author sidebar — avatar, name, bio, location, social icons.
+Icons are inline SVG (no font dependencies).
+{%- endcomment -%}
+<aside class="wa-sidebar" aria-label="author">
+  <div class="wa-sidebar__portrait">
+    <img class="wa-sidebar__avatar" src="{{ '/images/haonan.png' | relative_url }}" alt="{{ site.author.name }}">
+  </div>
+  <h1 class="wa-sidebar__name" data-text="{{ site.author.name }}">{{ site.author.name }}</h1>
+  {%- if site.author.bio -%}
+    <p class="wa-sidebar__bio">{{ site.author.bio }}</p>
+  {%- endif -%}
+  {%- if site.author.location -%}
+    <p class="wa-sidebar__loc">
+      <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M8 0C4.7 0 2 2.7 2 6c0 4.5 6 10 6 10s6-5.5 6-10c0-3.3-2.7-6-6-6zm0 8.2A2.2 2.2 0 1 1 8 3.8a2.2 2.2 0 0 1 0 4.4z"/></svg>
+      {{ site.author.location }}
+    </p>
+  {%- endif -%}
+
+  <ul class="wa-sidebar__links">
+    {%- if site.author.email -%}
+    <li><a href="mailto:{{ site.author.email }}" aria-label="email">
+      <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M1.5 3h13c.3 0 .5.2.5.5v9c0 .3-.2.5-.5.5h-13a.5.5 0 0 1-.5-.5v-9c0-.3.2-.5.5-.5zm.7 1.3v.6L8 9l5.8-4.1v-.6H2.2zm11.6 1.8L8 10.3 2.2 6.1v6.2h11.6V6.1z"/></svg>
+      <span>email</span>
+    </a></li>
+    {%- endif -%}
+    {%- if site.author.googlescholar -%}
+    <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener" aria-label="google scholar">
+      <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0L0 5.5 8 11l6.5-4.5V11h1V5.5L8 0zM4 9.3v2.2c0 1.2 1.8 2.5 4 2.5s4-1.3 4-2.5V9.3l-4 2.7-4-2.7z"/></svg>
+      <span>scholar</span>
+    </a></li>
+    {%- endif -%}
+    {%- if site.author.github -%}
+    <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" aria-label="github">
+      <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.6 0 0 3.6 0 8c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4v-1.4c-2.2.5-2.7-1-2.7-1-.4-1-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.5.8 1.2.8 2.1 0 3.1-1.9 3.7-3.6 3.9.3.3.6.8.6 1.6v2.3c0 .2.1.5.6.4C13.7 14.5 16 11.5 16 8c0-4.4-3.6-8-8-8z"/></svg>
+      <span>github</span>
+    </a></li>
+    {%- endif -%}
+    {%- if site.author.linkedin -%}
+    <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
+      <svg viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0zM4.8 13.3H2.7V6.1h2.1v7.2zM3.7 5.2a1.2 1.2 0 1 1 0-2.5 1.2 1.2 0 0 1 0 2.5zm9.6 8.1h-2.1V9.8c0-.9 0-2-1.2-2s-1.4.9-1.4 1.9v3.6H6.5V6.1h2.1v1c.3-.6 1-1.2 2.1-1.2 2.2 0 2.6 1.5 2.6 3.4v4z"/></svg>
+      <span>linkedin</span>
+    </a></li>
+    {%- endif -%}
+  </ul>
+
+  <div class="wa-sidebar__hint">
+    press <kbd>⌘K</kbd> to navigate
+  </div>
+</aside>

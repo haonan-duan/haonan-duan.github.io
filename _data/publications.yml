@@ -6,17 +6,21 @@
 #   authors_html  — author list as raw HTML (use <strong> for own name,
 #                   <sup>*</sup> for equal contribution, etc.)
 #   venue         — venue string (e.g., "ICCV, 2025")
+#   wide          — optional; true if the figure is panoramic (W:H >= ~2)
+#                   so the tile spans the full gallery row
 #   links         — optional list of {text, url} for extra links row
 
 - title: "Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy"
   url: https://arxiv.org/abs/2508.13103v1
   image: OC-VLA.png
+  wide: true
   authors_html: "Tianyi Zhang<sup>*</sup>, <strong>Haonan Duan</strong><sup>*</sup>, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou"
   venue: "AAAI, 2026"
 
 - title: "Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy"
   url: https://arxiv.org/abs/2503.19757
   image: Dita.png
+  wide: true
   authors_html: "Zhi Hou<sup>*</sup>, Tianyi Zhang<sup>*</sup>, Yuwen Xiong, <strong>Haonan Duan</strong>, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen"
   venue: "ICCV, 2025"
   links:
@@ -40,6 +44,7 @@
 - title: "Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations"
   url: https://ieeexplore.ieee.org/document/10577462
   image: TRO-W.png
+  wide: true
   authors_html: "Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, <strong>Haonan Duan</strong>"
   venue: "IEEE Transactions on Robotics, 2024"
   links:
@@ -51,6 +56,7 @@
 - title: "Learning Realistic and Reasonable Grasps for Anthropomorphic Hand in Cluttered Scenes"
   url: https://ieeexplore.ieee.org/document/10610646
   image: ICRA2024.png
+  wide: true
   authors_html: "<strong>Haonan Duan</strong>, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang"
   venue: "ICRA, 2024"
 

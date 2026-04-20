@@ -1,171 +1,450 @@
-/* 和モダン — wa-modern layer
-   Overrides theme defaults with a restrained Japanese-inspired palette.
-   Imported last from assets/css/main.scss so its rules cascade over the theme. */
+/* =========================================================
+   和モダン — standalone stylesheet for haonan-duan.github.io
+   Restrained Japanese-editorial aesthetic. No theme inheritance.
+   ========================================================= */
 
+/* ---------- palette ---------- */
 $kinari:        #f7f4ec;  // 生成り — unbleached page background
 $washi:         #fbfaf5;  // washi paper — card surface
 $sumi:          #1f1d1a;  // 墨 — primary ink
 $sumi-2:        #6b655c;  // secondary text
-$hairline:      #d9d3c5;  // default rule / border
+$sumi-3:        #a39c8f;  // tertiary / muted
+$hairline:      #d9d3c5;  // rule / border
 $hairline-dark: #8b8376;  // hover border
 $ai:            #2d4a6b;  // 藍 — indigo accent for links
+$ai-dark:       #1e3754;  // deeper indigo on hover
 
-html, body {
-  background: $kinari;
+/* ---------- typography ---------- */
+$font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+            "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP",
+            "PingFang SC", "Microsoft YaHei", sans-serif;
+$font-mono: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+$content-max: 760px;
+$sidebar-w: 240px;
+$shell-max: 1080px;
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; }
+
+/* ---------- base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 body {
+  background: $kinari;
   color: $sumi;
-}
-
-/* narrower reading column, more breathing room */
-.page__content {
+  font-family: $font-body;
+  font-size: 16px;
   line-height: 1.78;
-  color: $sumi;
-  font-size: 1rem;
-
-  p { color: $sumi; }
-  strong { color: $sumi; font-weight: 600; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* links: deeper indigo with always-on subtle underline */
-.page__content a {
-  color: $ai;
-  text-decoration: underline;
-  text-decoration-color: rgba(45, 74, 107, 0.45);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color 150ms ease, text-decoration-color 150ms ease;
-
-  &:hover,
-  &:focus {
-    color: darken($ai, 8%);
-    text-decoration-color: $ai;
-  }
-}
-
-/* section headings — lowercase with hairline rule beneath */
-.page__content h1 {
-  font-size: 1.15em;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: lowercase;
-  color: $sumi;
-  margin: 3em 0 1.4em 0;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid $hairline;
-
-  /* first heading needs less top margin */
-  &:first-of-type { margin-top: 2em; }
-}
-
-/* preserve scroll-offset anchor behavior (used by .anchor spans) */
-$scroll_offset: 2em;
-.anchor:before {
-  content: '';
-  display: block;
-  position: relative;
-  width: 0;
-  height: $scroll_offset;
-  margin-top: -$scroll_offset;
-}
-
-/* ——— paper cards ——— */
-.paper-box {
+/* ---------- shell layout ---------- */
+.wa-shell {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  background: $washi;
-  border: 1px solid $hairline;
-  border-radius: 2px;
-  padding: 1.6em;
-  margin: 0 0 1em 0;
-  transition: border-color 220ms ease, background 220ms ease;
+  max-width: $shell-max;
+  margin: 0 auto;
+  padding: 2.5rem 1.75rem;
+  gap: 3.5rem;
+}
 
-  &:hover {
-    border-color: $hairline-dark;
+.wa-main {
+  flex: 1;
+  min-width: 0;
+  max-width: $content-max;
+}
+
+.wa-article {
+  /* article content — all section styling lives here */
+}
+
+/* ---------- sidebar ---------- */
+.wa-sidebar {
+  width: $sidebar-w;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  padding-top: 1rem;
+
+  &__portrait {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1rem;
+    isolation: isolate;
+    animation: wa-portrait-float 6s ease-in-out infinite;
+
+    /* outer halo ring — rotating conic gradient in wa palette */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: conic-gradient(from 0deg,
+        rgba(45, 74, 107, 0.38),
+        rgba(139, 58, 58, 0.28),
+        rgba(107, 101, 92, 0.22),
+        rgba(45, 74, 107, 0.38));
+      animation: wa-portrait-ring 12s linear infinite;
+      z-index: -1;
+    }
+
+    /* mask ring's interior with page bg so only outer edge shows */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: $kinari;
+      z-index: -1;
+    }
   }
 
-  .paper-box-image {
-    display: flex;
-    justify-content: center;
+  &__avatar {
     width: 100%;
-    order: 2;
-    margin-top: 1em;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: block;
+    transition: transform 500ms cubic-bezier(.22, 1, .36, 1),
+                filter 500ms ease;
+  }
 
-    img {
-      max-width: 100%;
-      box-shadow: none;
+  &__portrait:hover .wa-sidebar__avatar {
+    transform: scale(1.04) translateY(-2px);
+    filter: drop-shadow(0 0 12px rgba(45, 74, 107, 0.25));
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25rem;
+    animation: wa-glitch 7s infinite;
+    will-change: transform, text-shadow;
+  }
+
+  &__bio {
+    font-size: 0.9rem;
+    color: $sumi-2;
+    margin-bottom: 0.5rem;
+  }
+
+  &__loc {
+    font-size: 0.82rem;
+    color: $sumi-2;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1.2rem;
+
+    svg { flex-shrink: 0; color: $sumi-3; }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-top: 1px solid $hairline;
+    padding-top: 1rem;
+    margin-bottom: 1.2rem;
+
+    li { line-height: 1; }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: $sumi-2;
+      text-decoration: none;
+      padding: 0.25rem 0;
+      transition: color 150ms ease;
+
+      svg { color: $sumi-3; transition: color 150ms ease; }
+
+      &:hover {
+        color: $ai;
+        svg { color: $ai; }
+      }
+    }
+  }
+
+  &__hint {
+    font-size: 0.72rem;
+    color: $sumi-3;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    border-top: 1px solid $hairline;
+    padding-top: 0.75rem;
+
+    kbd {
+      display: inline-block;
+      padding: 0.08rem 0.35rem;
+      background: $washi;
       border: 1px solid $hairline;
       border-radius: 2px;
-      object-fit: cover;
-    }
-  }
-
-  .paper-box-text {
-    width: 100%;
-    order: 1;
-
-    p { margin: 0 0 0.35em 0; }
-
-    .paper-box-title {
-      line-height: 1.45;
-      margin-bottom: 0.5em;
-      a {
-        color: $sumi;
-        border-bottom: none;
-        strong { font-weight: 600; }
-      }
-      a:hover { border-bottom-color: $sumi; color: $sumi; }
-    }
-
-    .paper-box-authors {
+      font-family: $font-mono;
+      font-size: 0.7rem;
       color: $sumi-2;
-      font-size: 0.92em;
-      line-height: 1.6;
-    }
-
-    .paper-box-venue {
-      color: $sumi-2;
-      font-size: 0.88em;
-      font-style: italic;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.4em;
-    }
-
-    .paper-box-links {
-      font-size: 0.88em;
-      color: $sumi-2;
-      margin-top: 0.4em;
-      a { color: $ai; }
-    }
-  }
-
-  @include breakpoint($medium) {
-    .paper-box-image {
-      justify-content: flex-start;
-      width: 38%;
-      min-width: 200px;
-      order: 1;
-      margin-top: 0;
-      img { max-width: 100%; }
-    }
-
-    .paper-box-text {
-      width: 62%;
-      padding-left: 1.6em;
-      order: 2;
     }
   }
 }
 
-/* ——— timeline for news / education / experience ———
-   Styles the <ul> that kramdown emits from `- *date*, text` markdown. */
-.page__content ul {
+/* ---------- article typography ---------- */
+.wa-article {
+  counter-reset: wa-section;
+
+  p {
+    margin-bottom: 1.1em;
+  }
+
+  a {
+    color: $ai;
+    text-decoration: underline;
+    text-decoration-color: rgba(45, 74, 107, 0.4);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+
+    &:hover, &:focus {
+      color: $ai-dark;
+      text-decoration-color: $ai-dark;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+    color: $sumi;
+  }
+
+  em {
+    font-style: italic;
+    color: $sumi-2;
+  }
+
+  /* section headings — terminal-style [01] prefix, then lowercase name */
+  h1 {
+    counter-increment: wa-section;
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: lowercase;
+    color: $sumi-2;
+    margin: 3em 0 1.4em 0;
+    padding-bottom: 0.45em;
+    border-bottom: 1px solid $hairline;
+
+    &::before {
+      content: "[" counter(wa-section, decimal-leading-zero) "] ";
+      font-family: $font-mono;
+      color: $ai;
+      font-weight: 500;
+      font-size: 0.9em;
+      letter-spacing: 0.06em;
+      margin-right: 0.5em;
+      text-transform: none;
+    }
+
+    &:first-of-type { margin-top: 2.5em; }
+  }
+
+  /* scroll-target anchor spans */
+  .anchor {
+    display: block;
+    position: relative;
+    top: -1rem;
+    visibility: hidden;
+  }
+}
+
+/* ---------- paper gallery: dense edge-to-edge mosaic ---------- */
+/* No borders, no padding, no frames — just figures packed tightly.
+   Aspect-aware: wide (panoramic) figures span a full row,
+   moderate-ratio figures pair up 2 per row.
+   Hover/focus → dark overlay fades in with title/authors/venue/links. */
+
+.paper-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+  align-items: start;   /* let cells hug their natural image height */
+  gap: 12px;
+  margin: 1.5rem 0 0 0;
+}
+
+.paper-tile {
+  position: relative;
+  overflow: hidden;
+  grid-column: span 1;
+  background: $sumi;        /* shows briefly while image loads */
+  line-height: 0;           /* remove default img baseline gap */
+  border-radius: 8px;
+  border: 2px solid $sumi-2;
+}
+
+.paper-tile--wide {
+  grid-column: span 2;
+}
+
+/* non-wide tiles: force a common 3:2 aspect so paired tiles match heights
+   exactly; cover-fit crops ~1.5–3% off one axis, imperceptible in practice. */
+.paper-tile:not(.paper-tile--wide) {
+  aspect-ratio: 3 / 2;
+
+  .paper-tile__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.paper-tile__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.paper-tile__overlay {
+  position: absolute;
+  inset: 0;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(31, 29, 26, 0.82);
+  color: $kinari;
+  opacity: 0;
+  transition: opacity 240ms ease;
+  line-height: 1.55;
+  overflow-y: auto;
+
+  p { margin: 0; }
+
+  /* force all emphasized text (title <strong>, user's name in authors)
+     to kinari on the dark overlay — otherwise they stay sumi and vanish */
+  strong { color: $kinari; }
+
+  .paper-tile__title {
+    font-size: 0.98rem;
+    line-height: 1.4;
+
+    a {
+      color: $kinari;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 150ms ease;
+      strong { font-weight: 600; }
+      &:hover { border-bottom-color: $kinari; }
+    }
+  }
+
+  .paper-tile__authors {
+    font-size: 0.82rem;
+    color: rgba(247, 244, 236, 0.88);
+  }
+
+  .paper-tile__venue {
+    font-size: 0.8rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    color: rgba(247, 244, 236, 0.72);
+  }
+
+  .paper-tile__links {
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+    color: rgba(247, 244, 236, 0.7);
+
+    a {
+      color: $kinari;
+      text-decoration: underline;
+      text-decoration-color: rgba(247, 244, 236, 0.5);
+      text-underline-offset: 3px;
+      &:hover { text-decoration-color: $kinari; }
+    }
+  }
+}
+
+.paper-tile:hover .paper-tile__overlay,
+.paper-tile:focus-within .paper-tile__overlay {
+  opacity: 1;
+}
+
+.paper-tile__sep {
+  color: rgba(247, 244, 236, 0.45);
+  margin: 0 0.15em;
+  text-decoration: none;
+}
+
+/* touch / narrow: single-column stack; info always visible below figure */
+@media (hover: none), (max-width: 640px) {
+  .paper-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .paper-tile,
+  .paper-tile--wide {
+    grid-column: span 1;
+    aspect-ratio: auto;     /* reset desktop-enforced 3:2 on mobile */
+    line-height: 1.55;
+    background: transparent;
+    border: none;           /* info below figure on mobile, no wrapper look */
+    border-radius: 8px;
+    overflow: visible;
+  }
+
+  .paper-tile__img {
+    width: 100%;
+    height: auto;
+    object-fit: unset;      /* reset desktop cover on mobile */
+    border-radius: 8px;
+    border: 2px solid $sumi-2;
+  }
+
+  .paper-tile__overlay {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    color: $sumi;
+    padding: 0.6rem 0 0.6rem 0;
+    transition: none;
+
+    strong { color: $sumi; }
+    .paper-tile__title a { color: $sumi; }
+    .paper-tile__authors { color: $sumi-2; }
+    .paper-tile__venue { color: $sumi-2; }
+    .paper-tile__links {
+      color: $sumi-2;
+      a {
+        color: $ai;
+        text-decoration-color: rgba(45, 74, 107, 0.4);
+        &:hover { text-decoration-color: $ai; }
+      }
+    }
+  }
+
+  .paper-tile__sep { color: $sumi-3; }
+}
+
+/* ---------- timeline for news / education / experience ---------- */
+.wa-article ul {
   list-style: none;
-  padding-left: 1.4em;
-  margin-left: 0.2em;
+  padding-left: 1.35em;
+  margin: 0 0 1em 0.15em;
   position: relative;
 
   &::before {
@@ -180,14 +459,14 @@ $scroll_offset: 2em;
 
   li {
     position: relative;
-    padding-left: 0.6em;
-    margin: 0 0 0.5em 0;
+    padding-left: 0.55em;
+    margin: 0 0 0.55em 0;
 
     &::before {
       content: "";
       position: absolute;
-      left: -1.15em;
-      top: 0.72em;
+      left: -1.1em;
+      top: 0.7em;
       width: 7px;
       height: 7px;
       border-radius: 50%;
@@ -195,118 +474,119 @@ $scroll_offset: 2em;
       border: 1px solid $hairline-dark;
     }
 
-    /* first-level bullets only get the timeline treatment */
-    ul { display: none; } /* safety: no nested lists expected */
-
     em {
       display: inline-block;
-      min-width: 5.4em;
+      min-width: 5.2em;
       margin-right: 0.4em;
       color: $sumi-2;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.86em;
+      font-family: $font-mono;
+      font-size: 0.84rem;
       font-style: normal;
       letter-spacing: 0.02em;
     }
   }
 }
 
-/* visitor map — warmer surface, matches palette */
-.visitor-map-container {
-  max-width: 320px;
-  margin: 3rem auto 2rem auto;
-  padding: 0.75rem;
-  background: $washi;
-  border: 1px solid $hairline;
-  border-radius: 2px;
-  box-shadow: none;
-
-  iframe, canvas, img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-  }
-}
-
-/* sidebar / author profile — soften to match */
-.sidebar, .author__avatar img {
-  border-color: $hairline !important;
-}
-.author__avatar img {
-  box-shadow: none !important;
-}
-.author__content, .author__urls-wrapper {
-  color: $sumi;
-}
-.author__urls a {
-  color: $sumi-2;
-  &:hover { color: $ai; }
-}
-
-/* masthead — quiet it down (needs !important to override theme) */
-.masthead,
-.masthead__inner-wrap,
-.greedy-nav {
-  background: $kinari !important;
-  border-bottom-color: $hairline !important;
-}
-.masthead {
-  border-bottom: 1px solid $hairline;
-}
-.greedy-nav a {
-  color: $sumi !important;
-  text-decoration: none !important;
-  &:hover { color: $ai !important; }
-}
-.greedy-nav .visible-links a:before {
-  background: $ai !important;
-}
-
-/* footer — quiet */
-.site-footer {
-  background: $kinari;
-  padding-bottom: 2rem;
-}
-
-.site-footer__credit {
-  text-align: center;
-  color: $sumi-2;
-  font-size: 0.78em;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  margin: 1rem auto 0 auto;
-  padding-top: 1rem;
+/* ---------- footer ---------- */
+.wa-footer {
+  max-width: $shell-max;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 3rem 1.75rem;
   border-top: 1px solid $hairline;
-  max-width: 320px;
 
-  a {
+  &__count {
+    text-align: center;
+    font-family: $font-mono;
+    font-size: 0.82rem;
     color: $sumi-2;
-    text-decoration: underline;
-    text-decoration-color: $hairline;
-    text-underline-offset: 3px;
-    transition: color 150ms ease, text-decoration-color 150ms ease;
-    &:hover { color: $ai; text-decoration-color: $ai; }
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    margin: 0 auto 1.5rem auto;
+
+    span {
+      color: $sumi;
+      font-weight: 500;
+    }
+  }
+
+  &__credit {
+    text-align: center;
+    color: $sumi-2;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    max-width: 320px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    border-top: 1px solid $hairline;
+
+    a {
+      color: $sumi-2;
+      text-decoration: underline;
+      text-decoration-color: $hairline;
+      text-underline-offset: 3px;
+      transition: color 150ms ease, text-decoration-color 150ms ease;
+
+      &:hover {
+        color: $ai;
+        text-decoration-color: $ai;
+      }
+    }
   }
 }
 
-/* separator glyph inside paper-box links — muted so links stand out */
-.paper-box-sep {
-  color: $sumi-2;
-  opacity: 0.6;
-  margin: 0 0.1em;
+/* ---------- mobile ---------- */
+@media (max-width: 767px) {
+  .wa-shell {
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .wa-sidebar {
+    width: 100%;
+    position: static;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid $hairline;
+    padding-bottom: 1.5rem;
+
+    &__avatar { margin: 0 auto 1rem auto; }
+    &__loc { justify-content: center; }
+
+    &__links {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      border-top: none;
+      padding-top: 0;
+
+      a span { display: none; }
+    }
+
+    &__hint { display: none; }
+  }
+
+  .wa-main { max-width: 100%; }
+
+  .wa-article h1 { margin-top: 2em; }
+
+  .wa-footer { padding: 1.5rem 1.25rem 2.5rem 1.25rem; }
 }
 
-/* ——— command palette (⌘K / Ctrl-K / `/`) ——— */
+/* ---------- command palette ---------- */
 .wa-palette {
   position: fixed;
   inset: 0;
-  background: rgba(31, 29, 26, 0.32);
+  background: rgba(31, 29, 26, 0.34);
   display: none;
   align-items: flex-start;
   justify-content: center;
   z-index: 9999;
-  padding-top: 14vh;
-  backdrop-filter: blur(2px);
+  padding-top: 13vh;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 
   &.is-open { display: flex; }
 
@@ -315,25 +595,25 @@ $scroll_offset: 2em;
     background: $washi;
     border: 1px solid $hairline;
     border-radius: 3px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-    padding: 0.35em;
-    font-family: inherit;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+    padding: 0.35rem;
+    font-family: $font-body;
   }
 
   &__input {
     width: 100%;
-    padding: 0.8em 0.9em;
+    padding: 0.85rem 0.95rem;
     border: none;
     border-bottom: 1px solid $hairline;
     background: transparent;
-    font-size: 1em;
+    font-size: 1rem;
     color: $sumi;
     letter-spacing: 0.02em;
     outline: none;
     font-family: inherit;
 
     &::placeholder {
-      color: $sumi-2;
+      color: $sumi-3;
       font-style: italic;
     }
   }
@@ -341,24 +621,24 @@ $scroll_offset: 2em;
   &__list {
     list-style: none;
     margin: 0;
-    padding: 0.3em 0;
-    max-height: 50vh;
+    padding: 0.3rem 0;
+    max-height: 52vh;
     overflow-y: auto;
 
-    &::before { display: none; } /* disable timeline rule from general ul styles */
+    &::before { display: none; }
   }
 
   &__item {
-    padding: 0.55em 0.9em;
+    padding: 0.55rem 0.95rem;
+    margin: 0 0.3rem;
     cursor: pointer;
     color: $sumi;
-    font-size: 0.95em;
+    font-size: 0.92rem;
     letter-spacing: 0.03em;
     text-transform: lowercase;
     border-radius: 2px;
-    margin: 0 0.3em;
 
-    &::before { display: none; } /* disable timeline dot */
+    &::before { display: none; }
 
     &.is-active,
     &:hover {
@@ -368,26 +648,26 @@ $scroll_offset: 2em;
   }
 
   &__hint {
-    padding: 0.5em 0.9em;
-    font-size: 0.78em;
+    padding: 0.55rem 0.95rem;
+    font-size: 0.74rem;
     color: $sumi-2;
     border-top: 1px solid $hairline;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
   }
 }
 
-/* toast (copied feedback) */
+/* ---------- toast ---------- */
 .wa-toast {
   position: fixed;
-  bottom: 2em;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: $sumi;
   color: $kinari;
-  padding: 0.55em 1.1em;
+  padding: 0.55rem 1.15rem;
   border-radius: 2px;
-  font-size: 0.85em;
-  letter-spacing: 0.05em;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
   opacity: 0;
   transition: opacity 200ms ease, transform 200ms ease;
   z-index: 10000;
@@ -399,39 +679,72 @@ $scroll_offset: 2em;
   }
 }
 
-/* ——— scroll gear (NVIDIA GEAR nod) ——— */
+/* ---------- scroll gear ---------- */
 .wa-gear {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 1.4rem;
+  right: 1.4rem;
   color: $sumi-2;
   opacity: 0;
   transition: opacity 260ms ease, color 200ms ease;
   pointer-events: none;
   z-index: 100;
   line-height: 0;
+  text-decoration: none;
 
   &.is-visible {
     opacity: 0.55;
     pointer-events: auto;
   }
 
-  &:hover { color: $ai; opacity: 0.9; border-bottom: none; }
+  &:hover {
+    color: $ai;
+    opacity: 0.92;
+    text-decoration: none;
+  }
 
   svg {
-    transition: transform 120ms linear;
+    transition: transform 100ms linear;
     transform-origin: 50% 50%;
   }
 }
 
-/* ——— bio typewriter caret ——— */
+/* ---------- typewriter caret ---------- */
 .wa-caret {
   display: inline-block;
   color: $sumi-2;
   animation: wa-blink 900ms steps(2, end) infinite;
 }
+
 @keyframes wa-blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
+/* ---------- portrait float + halo rotation ---------- */
+@keyframes wa-portrait-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes wa-portrait-ring {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ---------- glitch on name (indigo + muted vermilion chromatic aberration) ---------- */
+@keyframes wa-glitch {
+  0%, 92%, 100% { text-shadow: none; transform: translate(0, 0); }
+  93%  { text-shadow: -1.5px 0 rgba(45, 74, 107, 0.75),  1.5px 0 rgba(139, 58, 58, 0.7);  transform: translate(1px, 0); }
+  94%  { text-shadow:  1.5px 0 rgba(45, 74, 107, 0.75), -1.5px 0 rgba(139, 58, 58, 0.7);  transform: translate(-1px, 0); }
+  95%  { text-shadow: -1px   0 rgba(45, 74, 107, 0.55),  1px   0 rgba(139, 58, 58, 0.5);  transform: translate(0, 0); }
+  96%  { text-shadow:  1px   0 rgba(45, 74, 107, 0.6),  -1px   0 rgba(139, 58, 58, 0.55); transform: translate(1px, 0); }
+  97%  { text-shadow: none; transform: translate(0, 0); }
+}
+
+/* respect OS reduced-motion for all three borrowed animations */
+@media (prefers-reduced-motion: reduce) {
+  .wa-sidebar__portrait { animation: none; }
+  .wa-sidebar__portrait::before { animation: none; }
+  .wa-sidebar__name { animation: none; }
+}

@@ -201,6 +201,20 @@
     setTimeout(step, 200);
   }
 
+  /* ---------- visitor counter (Abacus — bumps on load, returns new count) ---------- */
+  function buildCounter() {
+    var el = document.getElementById('wa-visitor-count');
+    if (!el) return;
+    fetch('https://abacus.jasoncameron.dev/hit/haonan-duan-github-io/homepage')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && typeof d.value === 'number') {
+          el.textContent = d.value.toLocaleString();
+        }
+      })
+      .catch(function () { /* silent: leave "—" placeholder */ });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -210,5 +224,6 @@
     buildPalette();
     buildGear();
     buildTypewriter();
+    buildCounter();
   }
 })();

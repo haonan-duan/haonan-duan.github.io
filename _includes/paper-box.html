@@ -1,21 +1,26 @@
 {%- comment -%}
-Renders one publication card from a _data/publications.yml entry.
-Usage: {% include paper-box.html pub=pub %}
+One publication gallery tile. Edge-to-edge figure with a fade-in overlay
+on hover/focus that reveals title, authors, venue, and links.
+Set `wide: true` on the YAML entry for panoramic figures → spans full row.
 {%- endcomment -%}
-<div class="paper-box">
-  <div class="paper-box-image"><div><img src="{{ '/images/' | append: include.pub.image | relative_url }}" alt="{{ include.pub.title | escape }}" width="100%"></div></div>
-  <div class="paper-box-text">
-    <p class="paper-box-title"><a href="{{ include.pub.url }}"><strong>{{ include.pub.title }}</strong></a></p>
-    <p class="paper-box-authors">{{ include.pub.authors_html }}</p>
-    <p class="paper-box-venue">{{ include.pub.venue }}</p>
-    <p class="paper-box-links">
+<article class="paper-tile{% if include.pub.wide %} paper-tile--wide{% endif %}">
+  <img class="paper-tile__img"
+       src="{{ '/images/' | append: include.pub.image | relative_url }}"
+       alt="{{ include.pub.title | escape }}" loading="lazy">
+  <div class="paper-tile__overlay">
+    <p class="paper-tile__title">
+      <a href="{{ include.pub.url }}"><strong>{{ include.pub.title }}</strong></a>
+    </p>
+    <p class="paper-tile__authors">{{ include.pub.authors_html }}</p>
+    <p class="paper-tile__venue">{{ include.pub.venue }}</p>
+    <p class="paper-tile__links">
       {%- if include.pub.links and include.pub.links.size > 0 -%}
         {%- for link in include.pub.links -%}
-          <a href="{{ link.url }}">{{ link.text }}</a>{%- unless forloop.last %} <span class="paper-box-sep">/</span> {% endunless -%}
+          <a href="{{ link.url }}">{{ link.text }}</a>{%- unless forloop.last %} <span class="paper-tile__sep">/</span> {% endunless -%}
         {%- endfor -%}
       {%- else -%}
         <a href="{{ include.pub.url }}">Paper ↗</a>
       {%- endif -%}
     </p>
   </div>
-</div>
+</article>

@@ -1,20 +1,12 @@
 ---
 permalink: /
 title: ""
-author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
-<span class='anchor' id='about-me'></span>
+<span class="anchor" id="about-me"></span>
 
 I am a researcher at [NVIDIA GEAR](https://research.nvidia.com/labs/gear/), working under the guidence of Dr. [Jim Fan](https://jimfan.me/) and Prof. [Yuke Zhu](https://yukezhu.me/). My research sits at the intersection of Multimodal Large Language Models and Robot Learning, with a specific focus on building foundation models for robotic perception and manipulation.
 
@@ -28,10 +20,12 @@ I received my Ph.D. from the Institute of Automation, Chinese Academy of Science
 
 # Publications
 
-Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications.
+Please visit my [Google Scholar](https://scholar.google.com/citations?&user=4zO4UlcAAAAJ) page for full publications. Hover a tile to read.
 
+<div class="paper-gallery">
 {% for pub in site.data.publications %}{% include paper-box.html pub=pub %}
 {% endfor %}
+</div>
 
 # Education
 - *2021 - 2024*, Ph.D., Institute of Automation, Chinese Academy of Sciences, Beijing, China.

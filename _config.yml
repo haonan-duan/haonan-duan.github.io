@@ -1,137 +1,72 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Site settings
+title                         : "Haonan Duan"
+description                   : "🤖🍣✈️🚃🏎️🌁🍦"
+repository                    : "haonan-duan.github.io"
+google_scholar_stats_use_cdn  : false
 
-# Site Settings
-title                    : "Haonan Duan"
-description              : "🤖🍣✈️🚃🏎️🌁🍦"
-repository               : "haonan-duan.github.io"
-google_scholar_stats_use_cdn : false
-
-# google analytics
-# google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
-
-# SEO Related
-# google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-# bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
-# baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
-
-# Site Author
+# Author
 author:
-  name             : "Haonan Duan"
-  avatar           : "images/haonan.png"
-  bio              : "Robotics Learner"
-  location         : "Shanghai, China"
-  googlescholar    : "https://scholar.google.com/citations?user=4zO4UlcAAAAJ"
-  email            : "duan.haonan10@gmail.com"
-  github           : "haonan-duan"
-  linkedin         : "haonan-duan"
+  name           : "Haonan Duan"
+  avatar         : "images/haonan.png"
+  bio            : "Robotics Learner"
+  location       : "Shanghai, China"
+  googlescholar  : "https://scholar.google.com/citations?user=4zO4UlcAAAAJ"
+  email          : "duan.haonan10@gmail.com"
+  github         : "haonan-duan"
+  linkedin       : "haonan-duan"
 
-
-# Reading Files
+# File handling
 include:
-  - .htaccess
   - _pages
-  - files
 exclude:
-  - docs
-  - google_scholar_crawler
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
   - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
   - .github
-  - CHANGELOG
-  - Capfile
   - Gemfile
-  - Gruntfile.js
+  - Gemfile.lock
   - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
-  - tmp
+  - README.md
+  - CLAUDE.md
+  - google_scholar_crawler
+  - run_server.sh
   - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
 
 # Conversion
 markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
 
-# Defaults
+# Default layout for pages
 defaults:
-  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: default
-      author_profile: true
 
-
-# Sass/SCSS
+# Sass
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
 
-
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
+# Output
+permalink: /:title/
+timezone: Asia/Shanghai
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
-
-# HTML Compression
-# - http://jch.penibelst.de/
+# HTML compression
 compress_html:
   clippings: all
   ignore:
     envs: development
-
-github: [metadata]

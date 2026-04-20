@@ -1,19 +1,28 @@
+{%- comment -%}
+Vanilla-JS citation fetcher. Populates #total_cit and .show_paper_citations
+elements if present. Silently no-ops if no such elements exist on the page.
+{%- endcomment -%}
 <script>
-    $(document).ready(function () {
-        {% if site.google_scholar_stats_use_cdn %}
-        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@'
-        {% else %}
-        var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/'
-        {% endif %}
-        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
-            var totalCitation = data['citedby']
-            document.getElementById('total_cit').innerHTML = totalCitation;
-            var citationEles = document.getElementsByClassName('show_paper_citations')
-            Array.prototype.forEach.call(citationEles, element => {
-                var paperId = element.getAttribute('data')
-                var numCitations = data['publications'][paperId]['num_citations']
-                element.innerHTML = '| Citations: ' + numCitations;
-            });
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  {% if site.google_scholar_stats_use_cdn %}
+  var base = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@';
+  {% else %}
+  var base = 'https://raw.githubusercontent.com/{{ site.repository }}/';
+  {% endif %}
+  fetch(base + 'google-scholar-stats/gs_data.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data) return;
+      var total = document.getElementById('total_cit');
+      if (total) total.innerHTML = data.citedby;
+      var tags = document.getElementsByClassName('show_paper_citations');
+      Array.prototype.forEach.call(tags, function (el) {
+        var id = el.getAttribute('data');
+        if (data.publications && data.publications[id]) {
+          el.innerHTML = '| Citations: ' + data.publications[id].num_citations;
+        }
+      });
     })
+    .catch(function () { /* ignore */ });
+});
 </script>
