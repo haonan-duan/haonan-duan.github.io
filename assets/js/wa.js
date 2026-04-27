@@ -6,7 +6,7 @@
   /* ---------- command palette (⌘K / Ctrl-K / `/`) ---------- */
   function buildPalette() {
     var sections = [];
-    document.querySelectorAll('.page__content h1').forEach(function (h) {
+    document.querySelectorAll('.wa-article h1').forEach(function (h) {
       var label = (h.textContent || '').trim();
       if (!label) return;
       sections.push({ label: label, target: h });
@@ -167,7 +167,7 @@
       if (sessionStorage.getItem('wa-typed')) return;
     } catch (e) { /* no sessionStorage — just run it once per load */ }
 
-    var content = document.querySelector('.page__content');
+    var content = document.querySelector('.wa-article');
     if (!content) return;
     // First <p> after the about-me anchor is the bio intro.
     var anchor = content.querySelector('#about-me');
