@@ -1,0 +1,15 @@
+# Experience entries, newest first.
+#   date / role / org / current (optional — true shows a pulsing "now" dot)
+
+- date: "2026.01 – now"
+  role: "Researcher"
+  org: "NVIDIA GEAR"
+  current: true
+
+- date: "2024.07 – 2025.09"
+  role: "Senior Researcher"
+  org: "SenseTime Research"
+
+- date: "2023.01 – 2023.06"
+  role: "Algorithm Engineer Intern"
+  org: "NIO Autonomous Driving"

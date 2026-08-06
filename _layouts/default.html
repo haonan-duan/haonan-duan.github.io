@@ -5,6 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.className += ' js';</script>
+
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="{{ site.author.name }}">
   <title>{{ site.author.name }}{% if page.title and page.title != "" %} · {{ page.title }}{% endif %}</title>
@@ -14,38 +16,33 @@
   <meta property="og:title" content="{{ site.author.name }}">
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:image" content="{{ '/images/haonan.png' | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta name="twitter:card" content="summary">
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-16x16.png' | relative_url }}">
-  <link rel="manifest" href="{{ '/images/site.webmanifest' | relative_url }}">
-  <meta name="theme-color" content="#f7f4ec">
+  <meta name="theme-color" content="#fbf9fe">
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 
 <body data-author-email="{{ site.author.email }}">
-  <div class="wa-shell">
-    {% include author-sidebar.html %}
-    <main class="wa-main" role="main">
-      <article class="wa-article">
-        {{ content }}
-      </article>
+  <div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <div class="shell">
+    {% include profile-card.html %}
+    <main class="main" role="main">
+      {{ content }}
     </main>
   </div>
 
-  <footer class="wa-footer">
-    <p class="wa-footer__count">
-      visitors · <span id="wa-visitor-count" aria-live="polite">—</span>
-    </p>
-    <p class="wa-footer__credit">
-      this website is built by <a href="https://claude.com/claude-code">claude code</a>
-    </p>
+  <footer class="footer">
+    <p class="footer__count">visitors · <b id="visitor-count" aria-live="polite">—</b></p>
+    <p>built with <a href="https://claude.com/claude-code">claude code</a></p>
   </footer>
 
-  {% include fetch_google_scholar_stats.html %}
   {% include analytics.html %}
-  <script src="{{ '/assets/js/wa.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>
 </html>

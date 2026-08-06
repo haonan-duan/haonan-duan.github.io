@@ -1,8 +1,6 @@
 # Site settings
 title                         : "Haonan Duan"
 description                   : "🤖🍣✈️🚃🏎️🌁🍦"
-repository                    : "haonan-duan.github.io"
-google_scholar_stats_use_cdn  : false
 
 # Author
 author:
@@ -26,7 +24,6 @@ exclude:
   - LICENSE
   - README.md
   - CLAUDE.md
-  - google_scholar_crawler
   - run_server.sh
   - vendor
 

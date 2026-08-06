@@ -1,14 +1,14 @@
-# Publications data. Entries render in order via _includes/paper-box.html
+# Publications data. Entries render in order via _includes/paper-card.html
 # Fields:
 #   title         — paper title (plain text)
 #   url           — main link (arxiv / DOI / project page)
 #   image         — filename under images/
 #   authors_html  — author list as raw HTML (use <strong> for own name,
 #                   <sup>*</sup> for equal contribution, etc.)
-#   venue         — venue string (e.g., "ICCV, 2025")
-#   wide          — optional; true if the figure is panoramic (W:H >= ~2)
-#                   so the tile spans the full gallery row
-#   links         — optional list of {text, url} for extra links row
+#   venue         — full venue string; becomes the badge's hover tooltip
+#   venue_tag     — optional short badge text (e.g., "T-RO 2024"); falls back to venue
+#   links         — optional list of {text, url}; if omitted, one "Paper" link is shown
+#   wide          — legacy, currently unused (the old mosaic gallery honored it)
 
 - title: "Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy"
   url: https://arxiv.org/abs/2508.13103v1
@@ -16,6 +16,7 @@
   wide: true
   authors_html: "Tianyi Zhang<sup>*</sup>, <strong>Haonan Duan</strong><sup>*</sup>, Haoran Hao, Yu Qiao, Jifeng Dai, Zhi Hou"
   venue: "AAAI, 2026"
+  venue_tag: "AAAI 2026"
 
 - title: "Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy"
   url: https://arxiv.org/abs/2503.19757
@@ -23,6 +24,7 @@
   wide: true
   authors_html: "Zhi Hou<sup>*</sup>, Tianyi Zhang<sup>*</sup>, Yuwen Xiong, <strong>Haonan Duan</strong>, Hengjun Pu, Ronglei Tong, Chengyang Zhao, Xizhou Zhu, Yu Qiao, Jifeng Dai, Yuntao Chen"
   venue: "ICCV, 2025"
+  venue_tag: "ICCV 2025"
   links:
     - text: Project
       url: https://robodita.github.io/
@@ -40,6 +42,7 @@
   image: TRO-D.png
   authors_html: "<strong>Haonan Duan</strong>, Peng Wang, Yifan Yang, Daheng Li, Wei Wei, Yongkang Luo, Guoqiang Deng"
   venue: "IEEE Transactions on Robotics, 2024"
+  venue_tag: "T-RO 2024"
 
 - title: "Learning Human-like Functional Grasping for Multi-finger Hands from Few Demonstrations"
   url: https://ieeexplore.ieee.org/document/10577462
@@ -47,6 +50,7 @@
   wide: true
   authors_html: "Wei Wei, Peng Wang, Sizhe Wang, Yongkang Luo, Wanyi Li, Daheng Li, Yayu Huang, <strong>Haonan Duan</strong>"
   venue: "IEEE Transactions on Robotics, 2024"
+  venue_tag: "T-RO 2024"
   links:
     - text: Project
       url: https://v-wewei.github.io/sr_dexgrasp/
@@ -59,9 +63,11 @@
   wide: true
   authors_html: "<strong>Haonan Duan</strong>, Yiming Li, Daheng Li, Wei Wei, Yayu Huang, Peng Wang"
   venue: "ICRA, 2024"
+  venue_tag: "ICRA 2024"
 
 - title: "Learning Human-to-Robot Dexterous Handovers for Anthropomorphic Hand"
   url: https://ieeexplore.ieee.org/document/9870872
   image: TCDS2022.png
   authors_html: "<strong>Haonan Duan</strong>, Peng Wang, Yiming Li, Daheng Li, Wei Wei"
   venue: "IEEE Transactions on Cognitive and Developmental Systems, 2022"
+  venue_tag: "T-CDS 2022"

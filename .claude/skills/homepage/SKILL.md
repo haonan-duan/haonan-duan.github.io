@@ -1,161 +1,198 @@
 ---
 name: homepage
-description: Guide for editing haonan-duan.github.io (academic personal site). Invoke when adding a publication, updating news, tweaking the wa-modern design, or modifying the gallery / sidebar / features. Encodes the design principles, architecture, and preferences established across the rebuild.
+description: Guide for editing haonan-duan.github.io (academic personal site). Invoke when adding a publication, updating news, tweaking the colorful card design, or modifying the sidebar / palette / interactive features. Encodes the design system, architecture, and preferences established across the rebuild.
 ---
 
 # Homepage maintenance guide
 
-Academic personal site for Haonan Duan (robotics researcher, NVIDIA GEAR). Built on Jekyll 3.9 + GitHub Pages. The site was rebuilt from the Minimal Mistakes fork into a hand-written single-page layout ("wa-modern" — 和モダン) with a data-driven publications gallery.
+Academic personal site for Haonan Duan (robotics researcher, NVIDIA GEAR). Jekyll 3.9 + GitHub Pages, hand-written single-page layout with data-driven content. No theme inheritance — no Minimal Mistakes, jQuery, Font Awesome, or Susy.
 
 ## Design language
 
-**Aesthetic**: restrained Japanese editorial — ma (negative space), kanso (simplicity), shibui (understated beauty). Axis-aligned, hairline rules, warm neutrals, one indigo accent. *Not* flashy — the site avoids neon/gradients/cursor effects even though a recent iteration borrowed three small flourishes from a reference site (hexagonal avatar halo, `[01]` section prefixes, subtle glitch on the name).
+**Colorful card style.** Every section is its own rounded rectangle in a different colour. Playful and saturated in the accents, very light in the surfaces. Gradients, glow, hover lift, scroll reveal, emoji badges are all welcome.
 
-**Palette** (all defined as SCSS variables at top of `_sass/_wa.scss`):
+> **Superseded:** an earlier iteration was a restrained Japanese-editorial design (和モダン — washi/sumi neutrals, hairline rules, `[01]` mono section prefixes, hexagonal avatar, "when in doubt pick restraint"). The user explicitly abandoned that direction on 2026-08-06. Do not reintroduce those cues.
+
+### Palette
+
+Ink and page (SCSS variables at the top of `_sass/_site.scss`):
 
 | Token | Hex | Role |
 |---|---|---|
-| `$kinari` | `#f7f4ec` | 生成り — page background |
-| `$washi` | `#fbfaf5` | card/surface |
-| `$sumi` | `#1f1d1a` | 墨 — primary ink |
-| `$sumi-2` | `#6b655c` | secondary text / link icon strokes |
-| `$sumi-3` | `#a39c8f` | muted / tertiary |
-| `$hairline` | `#d9d3c5` | default rule/border |
-| `$hairline-dark` | `#8b8376` | hover border |
-| `$ai` | `#2d4a6b` | 藍 — indigo accent for links, counters, glitch |
-| `$ai-dark` | `#1e3754` | link hover |
+| `$ink` | `#241f2e` | primary text |
+| `$ink-2` | `#5d5570` | secondary |
+| `$ink-3` | `#918aa5` | muted |
+| `$page` | `#fbf9fe` | page background |
 
-**Type**: Inter stack (system fallbacks) for body; SF Mono stack for dates, counters, `[01]` prefixes, visitor count. No Google Fonts imported.
+Card themes are **CSS custom properties**, set by one modifier class per card. Everything inside a card (title, badge, links, pills, hover glow) reads from these, so recolouring a section is a one-class change:
 
-## Preferences to respect (established across sessions)
+| Class | `--surface` | `--edge` | `--accent` | `--accent-ink` |
+|---|---|---|---|---|
+| `.card--coral` | `#fff4f0` | `#ffdbcf` | `#ee5d33` | `#b23a13` |
+| `.card--amber` | `#fffaeb` | `#ffe7b4` | `#f0a91b` | `#9a5f03` |
+| `.card--violet` | `#f7f4ff` | `#e4d9ff` | `#7b4ae2` | `#5a2bb8` |
+| `.card--sky` | `#f0f8ff` | `#cce7ff` | `#2a97e0` | `#0d6399` |
+| `.card--mint` | `#ecfbf4` | `#bfeed7` | `#17b06a` | `#097043` |
+| `.card--pink` | `#fff2f9` | `#ffd6ea` | `#ec5fa8` | `#b52970` |
 
-1. **Modesty, not over-showing.** Avoid features that amplify individual papers (hover-video, per-paper citation badges, stars, etc.). Prefer site-level features over per-paper ornamentation. See `~/.claude/projects/-Users-haonand-workspace-codes-haonan-duan-github-io/memory/feedback_site_tone.md`.
+`--accent` is for decoration (dots, badges, rules); `--accent-ink` is the darker variant for text on the surface. `--glow` is the coloured shadow.
 
-2. **No rotation on gallery tiles.** Chaos/disorder in the gallery comes from translate, margin, or size variance — never `rotate()`. Even 1–2° tilts are rejected. See `feedback_no_rotation.md` in memory.
+**Surfaces must stay very light.** Mid-saturation pastels were explicitly rejected as looking "土" (dowdy). Surfaces are the accent hue at very low chroma — tinted, not coloured-in.
 
-3. **Japanese aesthetic cues**, not Japanese kitsch. No hanko seals, no faux ink brushes, no literal kanji glyphs unless the user asks. See `user_design_taste.md`.
+**Background blobs are deliberately kept dimmer than the cards** (`opacity: .3`, `blur(110px)`). If you lighten the surfaces further, dim the blobs too — otherwise the background out-shouts the content.
 
-4. When in doubt between "more signal" and "more restraint," pick restraint.
+### Other tokens
+
+```scss
+$bw-card:  3px;   // section card borders
+$bw-inner: 2px;   // paper cards, emoji badges, count pills
+$bw-rule:  2px;   // rules inside the profile card
+$radius:   26px;  // card corner radius
+```
+
+**Type**: Inter stack for body, SF Mono stack for dates/counters. ⚠️ Inter is *declared but never loaded* — there is no `@font-face` or font link, so it silently falls back to the system font everywhere. Either self-host it or drop it from the stack; don't assume it renders.
+
+## Preferences to respect
+
+1. **Fancy and colourful is the goal.** Lean into colour, playfulness, micro-interactions.
+2. **No rotation on gallery tiles.** Predates the redesign and was never explicitly revoked — confirm before adding tilt to paper cards. (A hover wiggle on the emoji badge is currently in, flagged to the user.)
+3. **The user iterates live** against `http://127.0.0.1:4000` — prefer shipping a working version to describing one.
+4. Verify visual changes by screenshotting (see *Checking your work*), not by reasoning about CSS.
 
 ## Repo structure
 
 ```
 _config.yml                  # slim — site, author, 3 plugins (sitemap, redirect-from, jemoji)
 _data/
-  publications.yml           # paper entries (see schema below)
+  publications.yml           # paper entries (schema below)
   news.yml                   # news entries
+  education.yml              # education entries
+  experience.yml             # experience entries
 _includes/
-  author-sidebar.html        # portrait + name + SVG social icons + ⌘K hint
-  paper-box.html             # renders one gallery tile from a pub entry
-  fetch_google_scholar_stats.html  # vanilla-JS citation fetcher (dormant: needs hooks)
-  analytics.html             # placeholder for analytics snippet
-_layouts/default.html        # the only layout — hand-written HTML5, ~55 lines
-_pages/about.md              # the only content page; all sections live here
-_sass/_wa.scss               # the whole stylesheet (reset + layout + components + features)
+  profile-card.html          # sticky sidebar: portrait, name, bio, section nav, socials
+  paper-card.html            # renders one publication card
+  analytics.html             # ⚠️ references an undefined site.google_analytics_id — see Known issues
+_layouts/default.html        # the only layout — hand-written HTML5
+_pages/about.md              # the only content page; each section is a <section class="card card--x">
+_sass/_site.scss             # the whole stylesheet
 assets/
-  css/main.scss              # one-liner: @import "wa"
-  js/wa.js                   # all interactivity (see feature inventory)
+  css/main.scss              # one-liner: @import "site"
+  js/site.js                 # all interactivity
 images/                      # paper teasers + avatar + favicons
-google_scholar_crawler/      # Python script; runs daily via .github/workflows/
 ```
-
-No Minimal Mistakes theme, no jQuery, no Font Awesome, no Susy grid — all stripped during the rebuild.
 
 ## Data schemas
 
-### `_data/publications.yml` — one entry per paper
+### `_data/publications.yml`
 
 ```yaml
 - title: "Full paper title"
-  url: https://arxiv.org/abs/...   # main link (arxiv/DOI/project)
+  url: https://arxiv.org/abs/...   # main link
   image: Filename.png              # must exist in images/
-  wide: true                       # OPTIONAL — set true if W:H >= 2.0
-                                   # wide tiles span both columns in the gallery
-  authors_html: "A, <strong>Haonan Duan</strong>, B"  # raw HTML; <strong> for own name, <sup>*</sup> for equal contribution
-  venue: "ICCV, 2025"
-  links:                           # OPTIONAL — if absent, a default "Paper ↗" link appears
+  authors_html: "A, <strong>Haonan Duan</strong>, B"  # raw HTML; <strong> own name, <sup>*</sup> equal contrib
+  venue: "IEEE Transactions on Robotics, 2024"   # full name — becomes the badge tooltip
+  venue_tag: "T-RO 2024"                          # OPTIONAL short badge text; falls back to venue
+  links:                           # OPTIONAL — if absent, one "Paper" link is shown
     - text: Project
       url: https://...
-    - text: Video
-      url: https://...
+  wide: true                       # legacy, currently unused
 ```
 
-**Aspect-ratio rule**: measure image W:H. If ≥ 2.0 → add `wide: true`. Non-wide tiles get forced `aspect-ratio: 3/2` with `object-fit: cover` so paired tiles match heights (cropping is minimal, ~1.5–3%).
+Always set `venue_tag` for long venue names — the badge is a single pill and a full IEEE Transactions name eats an entire row.
 
-Check an image's aspect:
-```bash
-sips -g pixelWidth -g pixelHeight images/YourPaper.png
-```
+Images render at their natural aspect, full card width, no cropping.
 
-### `_data/news.yml` — one entry per news item
+### `_data/news.yml`
 
 ```yaml
 - date: "2025.11"
   body_html: 'One <a href="...">paper</a> got accepted by AAAI 2026.'
 ```
 
-Dates render in SF Mono via the article's `<em>` timeline CSS. Newest first in file order.
+### `_data/education.yml` / `_data/experience.yml`
+
+```yaml
+# education: date / degree / org / where
+# experience: date / role / org / current (true → pulsing "now" dot)
+```
+
+All four files are newest-first in file order. The `{{ ...size }}` count pills in the card headers update automatically.
 
 ## Common tasks
 
 ### Add a paper
 1. Drop the teaser image into `images/`.
-2. Append an entry to `_data/publications.yml` (use existing entries as template).
-3. Set `wide: true` if aspect W:H ≥ 2.0.
-4. Rebuild: livereload picks it up; or `bundle exec jekyll build`.
+2. Append an entry to `_data/publications.yml`, including `venue_tag`.
+3. Livereload picks it up.
 
 ### Add a news item
-Prepend to `_data/news.yml` (newest first). The `body_html` field takes one `<a>` tag if you want a link.
+Prepend to `_data/news.yml`. The count pill re-counts itself.
 
-### Reorder or rename sections
-Edit `_pages/about.md`. Section headings use `# Name` (kramdown h1). The `[01]` prefix is auto-counted from `counter-reset: wa-section` on `.wa-article` and `counter-increment` on `h1`. Reordering sections auto-re-sequences numbers.
+### Add or reorder a section
+Edit `_pages/about.md`. Each section is:
 
-Current sections: `News`, `Publications`, `Education`, `Experience`. Intro text above first heading becomes the bio.
+```html
+<section class="card card--COLOUR reveal" id="slug">
+  <header class="card__head">
+    <h2 class="card__title"><span class="card__icon">EMOJI</span>Title</h2>
+    <span class="card__chip">N items</span>   <!-- optional -->
+  </header>
+  ...
+</section>
+```
+
+Then add a matching entry to `.profile__nav` in `_includes/profile-card.html` with a `data-dot` colour, and register that colour in the `$dots` map in `_sass/_site.scss`. The ⌘K palette and the scrollspy both read sections from the DOM, so they need no changes.
+
+Headings must stay `<h2>` — the page has exactly one `<h1>` (the name in the profile card).
+
+### Prose sections
+Markdown inside a `<section>` needs a `<div markdown="1">` wrapper (kramdown). Keep the `<header>` outside it, or kramdown wraps the badge in a stray `<p>`.
 
 ### Tweak the palette
-All colors live as SCSS variables at the top of `_sass/_wa.scss`. Change them in one place.
+All theme values are the `@include theme(...)` lines near the top of `_sass/_site.scss`.
 
-### Add/remove a sidebar social link
-Edit `_includes/author-sidebar.html`. Icons are inline SVG (no font dependency) — copy an existing `<li>` block, swap the SVG path. Sidebar reads `site.author.<field>` from `_config.yml`.
+### Add/remove a social link
+Edit `_includes/profile-card.html`. Icons are inline SVG. The ⌘K palette reads these links from the DOM, so it stays in sync automatically — don't hardcode URLs in JS.
 
-## Feature inventory (`assets/js/wa.js`)
+## Feature inventory (`assets/js/site.js`)
 
-All vanilla JS, no dependencies. Loaded deferred.
+Vanilla JS, no dependencies, deferred.
 
-- **Command palette**: ⌘K / Ctrl-K / `/` opens a fuzzy jump-to-section + copy-email + quick-links overlay. Arrow keys + Enter navigate. Email copy uses `navigator.clipboard`.
-- **Scroll gear**: bottom-right SVG gear that rotates with scroll progress (0°→360°). Clickable, returns to `#about-me`. Appears after scrolling ~120px.
-- **Bio typewriter**: types out the first bio paragraph once per session on first visit (sessionStorage flag `wa-typed`). Skips on viewports <700px wide and on bodies >400 chars.
-- **Visitor counter**: fetches from Abacus (`abacus.jasoncameron.dev/hit/haonan-duan-github-io/homepage`). Bumps on load, populates `#wa-visitor-count` in the footer. Falls back to `—` on failure.
+- **Command palette** — ⌘K / Ctrl-K / `/`. Sections and social links are read from the DOM. Arrow keys + Enter. Restores focus on close. Swaps the hint to `Ctrl K` on non-Mac.
+- **Scroll reveal** — IntersectionObserver adds `.is-in` to `.reveal`. Scoped under `html.js` (set by an inline script in `<head>`) so content stays visible if JS never runs.
+- **Back-to-top ring** — fixed bottom-right, gradient SVG progress ring, appears after 160px.
+- **Scrollspy** — highlights the current section in the sidebar nav.
+- **Visitor counter** — Abacus (`abacus.jasoncameron.dev`), populates `#visitor-count`, falls back to `—`.
 
 All animations respect `prefers-reduced-motion`.
 
-## Sidebar "borrowed flourishes"
+## Checking your work
 
-Three elements adapted from a reference site (wangjingbo1219.github.io), recolored to the wa palette:
+The user iterates visually, so verify with a screenshot rather than reasoning about CSS:
 
-- **Hexagonal avatar** — `clip-path: polygon(50% 0%, 100% 25%, ...)`. Rotating conic-gradient halo in indigo + muted vermilion + sumi tones (12s cycle). Floating animation (4px, 6s).
-- **`[01]` section prefixes** — SF Mono, `$ai` indigo, `decimal-leading-zero` via CSS counter. Auto-re-sequences if sections are reordered.
-- **Name glitch** — brief chromatic-aberration burst on `.wa-sidebar__name` every 7s (93–97% of keyframe), indigo + muted vermilion instead of the reference's neon cyan+pink.
+```bash
+curl -s --noproxy '*' http://127.0.0.1:4000/          # NOTE: --noproxy, a local Privoxy intercepts otherwise
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-sandbox --no-proxy-server --hide-scrollbars \
+  --window-size=1400,1050 --virtual-time-budget=8000 \
+  --screenshot=/tmp/shot.png http://127.0.0.1:4000/
+```
 
-These live in `_sass/_wa.scss` as `@keyframes wa-portrait-float`, `wa-portrait-ring`, `wa-glitch`.
+Two gotchas:
+- **A local Privoxy proxies `curl`** and returns 503 for localhost. Always pass `--noproxy '*'`.
+- **Headless Chrome clamps the layout viewport to 500px minimum.** `--window-size=390` renders at 500 CSS px and crops, which looks like a horizontal-overflow bug but isn't. Test mobile at 500px and read it as "narrow", or use real device emulation.
+
+Split tall screenshots with PIL to inspect sections.
 
 ## Build & serve
 
 ```bash
-# One-time: install gems locally (see Ruby quirk below)
-bundle config set --local path 'vendor/bundle'
-bundle _2.2.19_ install
-
-# Dev server with livereload
-bundle _2.2.19_ exec jekyll serve --livereload --port 4000
-
-# Or: bash run_server.sh
+bundle exec jekyll serve --livereload --port 4000    # or: bash run_server.sh
+bundle exec jekyll build --destination /tmp/out      # sanity check
 ```
 
-Site runs at http://127.0.0.1:4000.
-
 ### Ruby quirk
-System Ruby on macOS is 2.6 with bundler 1.17.2. The `Gemfile.lock` requires bundler 2.2.19. Install it user-local:
+If system Ruby/bundler complains, the `Gemfile.lock` wants bundler 2.2.19:
 
 ```bash
 gem install --user-install bundler:2.2.19
@@ -165,19 +202,31 @@ bundle _2.2.19_ <cmd>
 
 ## Deployment
 
-GitHub Pages builds automatically on push to `main`. The `.github/workflows/google_scholar_crawler.yaml` runs daily at 08:00 UTC and commits citation stats to a separate `google-scholar-stats` branch — don't delete that branch.
+GitHub Pages builds automatically on push to `main`. There are no GitHub Actions. Live at https://haonan-duan.github.io.
 
-Live at https://haonan-duan.github.io.
+⚠️ **Nothing but site content belongs in this directory.** Jekyll copies unknown top-level folders into `_site` and `jekyll-sitemap` indexes them. In 2026-08 a scratch directory of private immigration documents was sitting here and was being written into `sitemap.xml`; it has been moved to `~/Documents/RUN/niw/`. If scratch work lands here again, move it out — or add it to **both** `.gitignore` and `_config.yml: exclude`.
+
+## Known issues (open, not yet fixed)
+
+- **Images are ~15 MB total, uncompressed.** `Dita.png` is 3.8 MB at 4048 px wide for a ~760 px slot; `haonan.png` is 2.5 MB at 1856² for a 118 px avatar. No WebP, no resizing, no `width`/`height` attributes (so there's layout shift). Resizing to 2× display width + WebP would cut it ~95%.
+- **`_includes/analytics.html` fires an empty request** — `site.google_analytics_id` is undefined, so it renders `<script src="...gtag/js?id=">`. Configure an ID or delete the include.
+- **Inter is declared but never loaded** (see *Type* above).
+- **`README.md` is still the upstream AcadHomepage readme** — describes a Minimal Mistakes theme that no longer exists, documents the deleted Scholar workflow, and references `docs/screenshot.png` / `docs/README-zh.md` which aren't in the repo (broken images on the GitHub landing page). Needs a full rewrite.
+- **`images/TCDS2024.png`** (1.3 MB) is referenced nowhere — either a dropped paper or a forgotten asset.
+- **`images/site.webmanifest`** has empty `name`/`short_name`, a wrong icon path (`/android-chrome-192x192.png`, missing `/images/`), and a `theme_color` that disagrees with the layout's.
+- **Content gaps**: no CV link; no undergrad in education; `site.description` is emoji-only, which is also the meta description and every link preview.
+
+## Removed and why
+
+- **Google Scholar citation pipeline** (2026-08) — `google_scholar_crawler/`, its GitHub Action, and `_includes/fetch_google_scholar_stats.html`. It had never worked: the `google-scholar-stats` branch was never created, the fetch URL was missing the owner segment, and no element on the page consumed the data. Don't reintroduce it without also adding the markup that displays the numbers. The `author.googlescholar` profile link is unrelated and still live.
+- **Bio typewriter** — delayed the first paragraph by ~5 s and ignored `prefers-reduced-motion`. Replaced by scroll reveal.
+- **Hover-only publication overlays** — titles were invisible until hover. Titles, authors, and venue are now always visible.
 
 ## Files you generally shouldn't touch
 
-- `.github/workflows/google_scholar_crawler.yaml` — working, daily cron.
-- `_includes/fetch_google_scholar_stats.html` — dormant but correct; ready if citation hooks are added to markup later.
-- `images/favicon*`, `images/apple-touch-icon.png`, `images/site.webmanifest` — favicon set.
-- `google_scholar_crawler/` — Python for the workflow.
+- `images/favicon*`, `images/apple-touch-icon.png` — favicon set.
 
 ## Before making larger changes
 
-1. Check project memory at `~/.claude/projects/-Users-haonand-workspace-codes-haonan-duan-github-io/memory/MEMORY.md` for established preferences.
-2. If proposing a visible change, describe it and ask before implementing — the user prefers short proposals with a clear recommendation, not pre-built solutions.
-3. For destructive/reformat work, commit the current state first so there's a rewind point (the rebuild checkpoint is commit `280904a`).
+1. Check project memory at `~/.claude/projects/-Users-haonand-workspace-codes-haonan-duan-github-io/memory/MEMORY.md`.
+2. For destructive/reformat work, commit first so there's a rewind point.

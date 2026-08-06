@@ -1,0 +1,27 @@
+{%- comment -%}
+One publication card: teaser figure on top, then title / authors / venue / links.
+Everything is always visible — no hover required.
+`venue_tag` (optional) overrides the short badge text derived from `venue`.
+{%- endcomment -%}
+    <article class="paper">
+      <a class="paper__figure" href="{{ include.pub.url }}" aria-hidden="true" tabindex="-1">
+        <img src="{{ '/images/' | append: include.pub.image | relative_url }}"
+             alt="" loading="lazy">
+      </a>
+      <div class="paper__body">
+        <h3 class="paper__title">
+          <a href="{{ include.pub.url }}">{{ include.pub.title }}</a>
+        </h3>
+        <p class="paper__authors">{{ include.pub.authors_html }}</p>
+        <p class="paper__meta">
+          <span class="paper__venue" title="{{ include.pub.venue }}">{{ include.pub.venue_tag | default: include.pub.venue }}</span>
+          {%- if include.pub.links and include.pub.links.size > 0 -%}
+            {%- for link in include.pub.links %}
+            <a class="paper__link" href="{{ link.url }}">{{ link.text }}</a>
+            {%- endfor -%}
+          {%- else %}
+            <a class="paper__link" href="{{ include.pub.url }}">Paper</a>
+          {%- endif %}
+        </p>
+      </div>
+    </article>
