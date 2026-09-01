@@ -26,6 +26,17 @@ exclude:
   - CLAUDE.md
   - run_server.sh
   - vendor
+  # scratch guard — keep in sync with .gitignore. Without these, Jekyll copies
+  # stray folders into _site and jekyll-sitemap advertises them to search engines.
+  - tmp
+  - output
+  - outputs
+  - work
+  - deliverables
+  - tools
+  - "*.docx"
+  - "*.doc"
+  - "*.xlsx"
 
 # Conversion
 markdown: kramdown

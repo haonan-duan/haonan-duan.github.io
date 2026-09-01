@@ -3,3 +3,24 @@ push.sh
 .DS_Store
 .bundle/
 vendor/
+
+# --- scratch guard -------------------------------------------------------
+# This repo is a public GitHub Pages site. Jekyll copies unknown top-level
+# folders into _site and jekyll-sitemap indexes them, so anything dropped
+# here gets published AND submitted to search engines.
+#
+# Personal material has landed here twice (an immigration petition in
+# 2026-07, a resume + confidential peer-review material in 2026-08). These
+# patterns exist so a stray `git add -A` can't publish the next one.
+# Keep them in sync with `exclude:` in _config.yml.
+tmp/
+output/
+outputs/
+work/
+deliverables/
+tools/
+.codex_review/
+.codex-resume-work/
+*.docx
+*.doc
+*.xlsx
