@@ -1,10 +1,14 @@
 # Experience entries, newest first.
 #   date / role / org / current (optional — true shows a pulsing "now" dot)
 
-- date: "2026.01 – now"
+- date: "2025.12 – now"
   role: "Researcher"
   org: "NVIDIA GEAR"
   current: true
+
+- date: "2025.09 – 2025.12"
+  role: "Senior Researcher"
+  org: "Xiaomi Robot Foundation Models"
 
 - date: "2024.07 – 2025.09"
   role: "Senior Researcher"

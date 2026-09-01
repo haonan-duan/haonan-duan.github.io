@@ -14,7 +14,7 @@ redirect_from:
 
 I am a researcher at [NVIDIA GEAR](https://research.nvidia.com/labs/gear/), working under the guidance of Dr. [Jim Fan](https://jimfan.me/) and Prof. [Yuke Zhu](https://yukezhu.me/). My research sits at the intersection of Multimodal Large Language Models and Robot Learning, with a specific focus on building foundation models for robotic perception and manipulation.
 
-Previously, I was a researcher at SenseTime, where I worked on Vision-Language-Action models across pre-training, post-training, and their applications in multi-view generalization and human-robot interaction. I also contributed to video understanding, particularly agent-based reinforcement learning for long-horizon video reasoning.
+Previously, I worked on robot foundation models at Xiaomi. Before that, I was a researcher at SenseTime, where I worked on Vision-Language-Action models across pre-training, post-training, and their applications in multi-view generalization and human-robot interaction. I also contributed to video understanding, particularly agent-based reinforcement learning for long-horizon video reasoning.
 
 I received my Ph.D. from the Institute of Automation, Chinese Academy of Sciences in 2024. My doctoral research focused on robotic dexterous grasping and human–robot interaction.
 
